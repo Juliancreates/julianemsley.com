@@ -83,15 +83,6 @@ const isActive = (path: string) => {
     }
   });
 
-  // Auto-open sub-row when on a Work page
-  const path = window.location.pathname;
-  const onWorkPage = path === '/' || path === '/paintings' || path.startsWith('/vessels');
-  if (onWorkPage && subRow && workBtn) {
-    subRow.classList.add('open');
-    workBtn.classList.add('active');
-    workBtn.setAttribute('aria-expanded', 'true');
-    subRow.setAttribute('aria-hidden', 'false');
-  }
 </script>
 
 <style is:global>
@@ -132,7 +123,6 @@ const isActive = (path: string) => {
       align-items: center;
       gap: 0.75rem;
       background: #fff;
-      border-bottom: 1px solid #f0f0f0;
       padding: 1.25rem 1.25rem 0;
       z-index: 20;
     }
