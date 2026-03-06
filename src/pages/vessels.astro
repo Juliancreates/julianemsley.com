@@ -1,11 +1,17 @@
 ---
-import Base from '@/layouts/Base.astro';
-import Gallery from '@/components/Gallery.astro';
-import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Gallery from '../components/Gallery.astro';
 
-const vessels = await getCollection('vessels');
+const vessels = [
+  { src: '/images/vessels/vessel 1.jpg', alt: 'Vessel 1' },
+  { src: '/images/vessels/vessel 2.jpg', alt: 'Vessel 2' },
+  { src: '/images/vessels/vessel 3.jpg', alt: 'Vessel 3' },
+  { src: '/images/vessels/vessel 4.jpg', alt: 'Vessel 4' },
+  { src: '/images/vessels/vessel 5.jpg', alt: 'Vessel 5' },
+  { src: '/images/vessels/vessel 6.jpg', alt: 'Vessel 6' },
+];
 ---
 
-<Base title="Vessels — Julian Emsley">
-  <Gallery works={vessels} />
+<Base title="Vessels | Julian Emsley" fullBleed={true}>
+  <Gallery images={vessels} />
 </Base>
