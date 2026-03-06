@@ -231,6 +231,24 @@ const { images } = Astro.props;
     }, 300);
   }
 
+  // Centre first image in gallery on load
+  const gallery   = document.querySelector<HTMLElement>('.gallery');
+  const firstImg  = gallery?.querySelector<HTMLImageElement>('.gallery-img');
+
+  if (gallery && firstImg) {
+    const centre = () => requestAnimationFrame(() => {
+      const figure = firstImg.closest<HTMLElement>('figure');
+      const offset = Math.max(0, ((figure?.offsetWidth ?? 0) - gallery.offsetWidth) / 2);
+      gallery.scrollLeft = offset;
+    });
+
+    if (firstImg.complete && firstImg.naturalWidth > 0) {
+      centre();
+    } else {
+      firstImg.decode().then(centre).catch(centre);
+    }
+  }
+
   document.querySelectorAll<HTMLImageElement>('.gallery-img').forEach(img => {
     img.addEventListener('click', () => openLightbox(img));
   });
