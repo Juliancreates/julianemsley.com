@@ -25,17 +25,15 @@ const isActive = (path: string) => {
   </head>
   <body>
 
-    <!-- Mobile: fixed signature, bottom-right, above gallery -->
-    <img class="mobile-signature" src="/images/signature.png" alt="Julian Emsley" />
-
     <!-- Mobile: persistent top nav bar -->
     <nav class="mobile-nav-bar">
+      <a href="/" class="nav-logo">
+        <img src="/images/signature.png" alt="Julian Emsley" />
+      </a>
       <div class="nav-main-row">
-        <a href="mailto:julian@julianemsley.com" class="nav-email">julian@julianemsley.com</a>
-        <div class="nav-actions">
-          <button class="nav-work-btn" id="nav-work-btn" aria-expanded="false">Work</button>
-          <a href="/about" class={`nav-about${isActive('/about') ? ' active' : ''}`}>About</a>
-        </div>
+        <button class="nav-work-btn" id="nav-work-btn" aria-expanded="false">Work</button>
+        <a href="/about" class={`nav-link${isActive('/about') ? ' active' : ''}`}>About</a>
+        <a href="mailto:julian@julianemsley.com" class="nav-link">Email</a>
       </div>
       <div class="nav-sub-row" id="nav-sub-row" aria-hidden="true">
         <a href="/" class={`sub-link${isActive('/') ? ' active' : ''}`}>Paintings</a>
@@ -126,48 +124,30 @@ const isActive = (path: string) => {
     html, body { height: 100svh; overflow: hidden; }
     body { display: flex; flex-direction: column; }
 
-    /* Signature: fixed bottom-right, sits above gallery */
-    .mobile-signature {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      height: 52px;
-      width: auto;
-      z-index: 15;
-      pointer-events: none;
-      display: block;
-    }
-
     /* Nav bar: always visible, sits above content in flex stack */
     .mobile-nav-bar {
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
       background: #fff;
       border-bottom: 1px solid #f0f0f0;
+      padding: 1.25rem 1.25rem 0;
       z-index: 20;
+    }
+
+    .nav-logo img {
+      height: 52px;
+      width: auto;
+      display: block;
     }
 
     .nav-main-row {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      padding: 0.875rem 1.25rem;
-    }
-
-    .nav-email {
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      color: #999;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    .nav-email:hover { color: #000; }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
+      gap: 2rem;
     }
 
     .nav-work-btn {
@@ -182,28 +162,28 @@ const isActive = (path: string) => {
     }
     .nav-work-btn:hover, .nav-work-btn.active { color: #dca26d; }
 
-    .nav-about {
+    .nav-link {
       font-family: 'Lato', sans-serif;
       font-size: 14px;
       color: #999;
       text-decoration: none;
       transition: color 0.2s ease;
     }
-    .nav-about:hover { color: #000; }
-    .nav-about.active { color: #dca26d; }
+    .nav-link:hover { color: #000; }
+    .nav-link.active { color: #dca26d; }
 
     /* Sub-row: slides in below main nav row */
     .nav-sub-row {
       display: flex;
+      justify-content: center;
       gap: 2rem;
-      padding: 0 1.25rem;
       overflow: hidden;
       max-height: 0;
       transition: max-height 0.3s ease, padding 0.3s ease;
     }
     .nav-sub-row.open {
       max-height: 3rem;
-      padding: 0.625rem 1.25rem 0.75rem;
+      padding: 0.5rem 0 0.75rem;
     }
 
     .sub-link {
@@ -239,8 +219,7 @@ const isActive = (path: string) => {
 
   /* Hide mobile elements at desktop widths */
   @media (min-width: 768px) {
-    .mobile-signature { display: none; }
-    .mobile-nav-bar   { display: none; }
+    .mobile-nav-bar { display: none; }
   }
 
   /* ═══════════════════════════════
