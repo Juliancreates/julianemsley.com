@@ -1,0 +1,76 @@
+---
+import Base from '@/layouts/Base.astro';
+---
+
+<Base title="About — Julian Emsley" description="About the artist Julian Emsley.">
+  <article class="about">
+    <div class="about-content">
+      <h1 class="about-heading">About</h1>
+
+      <div class="about-body">
+        <p>
+          As an artist, I am fascinated by the interplay between texture and
+          social psychology. Texture, for me, is not just a visual or tactile
+          element, but also a psychological one. I believe that the textures we
+          encounter in our daily lives have a profound effect on our emotions,
+          perceptions, and interactions with one another.
+        </p>
+
+        <!-- Add further paragraphs from Julian's actual artist statement here -->
+
+        <p class="about-contact">
+          For enquiries, please email
+          <a href="mailto:julian@julianemsley.com">julian@julianemsley.com</a>
+        </p>
+      </div>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .about {
+    display: flex;
+    justify-content: center;
+    min-height: 100dvh;
+    padding: calc(3.5rem + var(--s-page)) var(--s-page) var(--s-page);
+  }
+
+  .about-content {
+    max-width: 560px;
+    width: 100%;
+  }
+
+  .about-heading {
+    font-size: var(--f-size-xs);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--c-text-dim);
+    margin-bottom: calc(var(--s-unit) * 6);
+  }
+
+  .about-body {
+    font-size: var(--f-size-base);
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--c-text);
+  }
+
+  .about-body p + p {
+    margin-top: calc(var(--s-unit) * 3);
+  }
+
+  .about-contact {
+    margin-top: calc(var(--s-unit) * 8);
+    color: var(--c-text-dim);
+  }
+
+  .about-contact a {
+    color: var(--c-accent);
+    transition: color var(--t-fast);
+  }
+
+  .about-contact a:hover {
+    color: var(--c-text);
+  }
+</style>

@@ -3,11 +3,9 @@ import Base from '@/layouts/Base.astro';
 import Gallery from '@/components/Gallery.astro';
 import { getCollection } from 'astro:content';
 
-const paintings = await getCollection('paintings');
 const vessels = await getCollection('vessels');
-const allWorks = [...paintings, ...vessels];
 ---
 
-<Base title="Julian Emsley — Paintings & Sculpture">
-  <Gallery works={allWorks} />
+<Base title="Vessels — Julian Emsley">
+  <Gallery works={vessels} />
 </Base>
