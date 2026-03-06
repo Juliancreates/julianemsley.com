@@ -8,7 +8,7 @@ const { title = 'Julian Emsley', fullBleed = false } = Astro.props;
 const currentPath = Astro.url.pathname;
 
 const isActive = (path: string) => {
-  if (path === '/') return currentPath === '/';
+  if (path === '/') return currentPath === '/' || currentPath === '/paintings';
   return currentPath.startsWith(path);
 };
 ---
@@ -51,7 +51,7 @@ const isActive = (path: string) => {
         </button>
       </div>
       <nav class="overlay-nav">
-        <a href="/paintings" class={isActive('/paintings') ? 'active' : ''}>Paintings</a>
+        <a href="/" class={isActive('/') ? 'active' : ''}>Paintings</a>
         <a href="/vessels" class={isActive('/vessels') ? 'active' : ''}>Vessels</a>
         <a href="/about" class={isActive('/about') ? 'active' : ''}>About</a>
         <a href="mailto:julian@julianemsley.com">Email</a>
@@ -74,7 +74,7 @@ const isActive = (path: string) => {
         <img src="/images/signature.png" alt="Julian Emsley" />
       </a>
       <nav class="sidebar-nav">
-        <a href="/paintings" class={isActive('/paintings') ? 'active' : ''}>Paintings</a>
+        <a href="/" class={isActive('/') ? 'active' : ''}>Paintings</a>
         <a href="/vessels" class={isActive('/vessels') ? 'active' : ''}>Vessels</a>
         <a href="/about" class={isActive('/about') ? 'active' : ''}>About</a>
         <a href="mailto:julian@julianemsley.com">Email</a>
@@ -118,7 +118,7 @@ const isActive = (path: string) => {
 
   /* ── Logo ── */
   .logo { display: block; }
-  .logo img { height: 56px; width: auto; display: block; }
+  .logo img { height: 86px; width: auto; display: block; }
 
   /* ── Shared ── */
   .section-label {
@@ -192,10 +192,10 @@ const isActive = (path: string) => {
   .overlay-nav {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 3rem;
   }
 
-  .overlay-nav a { text-decoration: none; color: #444444; font-family: 'Lato', sans-serif; font-size: 14px; transition: color 0.2s ease; }
+  .overlay-nav a { text-decoration: none; color: #999999; font-family: 'Lato', sans-serif; font-size: 14px; transition: color 0.2s ease; }
   .overlay-nav a.active { color: #dca26d; }
   .overlay-nav a:hover:not(.active) { color: #000; }
 
@@ -230,8 +230,8 @@ const isActive = (path: string) => {
       z-index: 10;
     }
 
-    .sidebar-nav { display: flex; flex-direction: column; gap: 1.25rem; }
-    .sidebar-nav a { text-decoration: none; color: #444444; font-family: 'Lato', sans-serif; font-size: 14px; transition: color 0.2s ease; }
+    .sidebar-nav { display: flex; flex-direction: column; gap: 2.5rem; }
+    .sidebar-nav a { text-decoration: none; color: #999999; font-family: 'Lato', sans-serif; font-size: 14px; transition: color 0.2s ease; }
     .sidebar-nav a.active { color: #dca26d; }
     .sidebar-nav a:hover:not(.active) { color: #000; }
 
