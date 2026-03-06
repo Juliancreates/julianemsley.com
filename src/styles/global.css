@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* Minimalist artist portfolio — clean defaults */
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Remove default link styling for minimal look */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

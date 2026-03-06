@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Julian Emsley">
+  <main class="min-h-screen flex flex-col">
+    <!-- Header: Logo left, Email right -->
+    <header class="flex justify-between items-start p-6 md:p-8">
+      <a href="/" class="text-2xl font-normal tracking-tight">
+        <!-- TODO: Replace with Julian's logo -->
+        <span class="italic">Julian Emsley</span>
+      </a>
+      <a href="mailto:julian@example.com" class="text-sm">
+        Email
+      </a>
+    </header>
+
+    <!-- Centered Artwork -->
+    <div class="flex-1 flex items-center justify-center p-8">
+      <div class="max-w-3xl w-full">
+        <!-- TODO: Replace with actual artwork -->
+        <div class="aspect-[4/3] bg-neutral-100 flex items-center justify-center">
+          <span class="text-neutral-400 text-sm">Artwork placeholder</span>
+        </div>
+        <!-- Optional: Artwork title/caption -->
+        <p class="mt-4 text-center text-sm text-neutral-500">
+          <!-- Artwork title here -->
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer (optional) -->
+    <footer class="p-6 md:p-8">
+      <!-- Future: navigation to additional pages -->
+    </footer>
+  </main>
+</Layout>
