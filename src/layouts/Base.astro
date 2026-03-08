@@ -2,9 +2,10 @@
 interface Props {
   title?: string;
   fullBleed?: boolean;
+  bodyScroll?: boolean;
 }
 
-const { title = 'Julian Emsley', fullBleed = false } = Astro.props;
+const { title = 'Julian Emsley', fullBleed = false, bodyScroll = false } = Astro.props;
 const currentPath = Astro.url.pathname;
 
 const isActive = (path: string) => {
@@ -13,7 +14,7 @@ const isActive = (path: string) => {
 };
 ---
 
-<html lang="en">
+<html lang="en" class={bodyScroll ? 'body-scroll' : ''}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -275,6 +276,25 @@ const isActive = (path: string) => {
 
     /* Desktop sidebar hidden on mobile */
     .sidebar { display: none; }
+  }
+
+  /* About page (and any bodyScroll page): allow normal document scroll so Safari hides its UI on scroll */
+  @media (max-width: 767px) {
+    html.body-scroll,
+    html.body-scroll body {
+      height: auto;
+      overflow: visible;
+    }
+    html.body-scroll .mobile-nav-bar {
+      position: sticky;
+      top: 0;
+    }
+    html.body-scroll main,
+    html.body-scroll main:not(.full-bleed) {
+      flex: none;
+      overflow: visible;
+      padding: 0;
+    }
   }
 
   /* Hide mobile elements at desktop widths */
