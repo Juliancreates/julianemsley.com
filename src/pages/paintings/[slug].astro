@@ -24,12 +24,17 @@ const { piece } = Astro.props;
           class="detail-img"
         />
       ))}
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
     </div>
     <div class="detail-info">
+      <a href="/" class="close-link">← Paintings</a>
       <p class="info-title">{piece.title}</p>
       <p class="info-year">{piece.year}</p>
       <p class="info-medium">{piece.medium}</p>
       <p class="info-dims">{piece.dimensions}</p>
+      {piece.blurb && <p class="info-blurb">{piece.blurb}</p>}
     </div>
   </div>
 </Base>
@@ -48,7 +53,7 @@ const { piece } = Astro.props;
       flex-shrink: 0;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.5rem;
       overflow-x: auto;
       overflow-y: hidden;
       height: 60%;
@@ -64,6 +69,14 @@ const { piece } = Astro.props;
       object-fit: contain;
       flex-shrink: 0;
       display: block;
+    }
+
+    .placeholder-img {
+      flex-shrink: 0;
+      height: 100%;
+      aspect-ratio: 3 / 4;
+      background: #e8e8e8;
+      border-radius: 1px;
     }
 
     .detail-info {
@@ -85,7 +98,7 @@ const { piece } = Astro.props;
       inset: 0;
       display: flex;
       flex-direction: row;
-      padding-left: 220px; /* clear the sidebar */
+      padding-left: 220px;
     }
 
     .detail-info {
@@ -105,7 +118,7 @@ const { piece } = Astro.props;
       min-width: 0;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.5rem;
       overflow-x: auto;
       overflow-y: hidden;
       height: 100vh;
@@ -123,9 +136,29 @@ const { piece } = Astro.props;
       flex-shrink: 0;
       display: block;
     }
+
+    .placeholder-img {
+      flex-shrink: 0;
+      height: 100%;
+      max-height: 700px;
+      aspect-ratio: 3 / 4;
+      background: #e8e8e8;
+      border-radius: 1px;
+    }
   }
 
   /* ── Info typography ── */
+  .close-link {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    color: #bbb;
+    text-decoration: none;
+    margin-bottom: 1.25rem;
+    display: block;
+    transition: color 0.2s ease;
+  }
+  .close-link:hover { color: #999; }
+
   .info-title {
     font-family: 'Lato', sans-serif;
     font-size: 15px;
@@ -146,5 +179,12 @@ const { piece } = Astro.props;
     font-family: 'Lato', sans-serif;
     font-size: 13px;
     color: #bbb;
+  }
+  .info-blurb {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: #999;
+    line-height: 1.65;
+    margin-top: 1.25rem;
   }
 </style>
