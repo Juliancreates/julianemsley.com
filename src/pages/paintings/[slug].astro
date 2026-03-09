@@ -1,0 +1,177 @@
+---
+import Base from '../../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import { paintings } from '../../data/paintings';
+
+export function getStaticPaths() {
+  return paintings.map(p => ({ params: { slug: p.slug }, props: { piece: p } }));
+}
+
+const { piece } = Astro.props;
+---
+
+<Base title={`${piece.title} | Julian Emsley`} fullBleed={true}>
+  <div class="detail">
+    <div class="detail-images">
+      {piece.images.map(img => (
+        <Image
+          src={img.src}
+          alt={img.alt}
+          width={1400}
+          quality={88}
+          loading="eager"
+          decoding="async"
+          class="detail-img"
+        />
+      ))}
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+    </div>
+    <div class="detail-info">
+      <p class="info-title">{piece.title}</p>
+      <p class="info-year">{piece.year}</p>
+      <p class="info-medium">{piece.medium}</p>
+      <p class="info-dims">{piece.dimensions}</p>
+      {piece.blurb && <p class="info-blurb">{piece.blurb}</p>}
+    </div>
+  </div>
+</Base>
+
+<style>
+  /* ── Mobile ── */
+  @media (max-width: 767px) {
+    .detail {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .detail-images {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      height: 60%;
+      padding: 0.75rem 1rem;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .detail-images::-webkit-scrollbar { display: none; }
+
+    .detail-img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .placeholder-img {
+      flex-shrink: 0;
+      height: 100%;
+      aspect-ratio: 3 / 4;
+      background: #e8e8e8;
+      border-radius: 1px;
+    }
+
+    .detail-info {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      padding: 1.25rem 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+  }
+
+  /* ── Desktop ── */
+  @media (min-width: 768px) {
+    .detail {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: row;
+      padding-left: 220px;
+    }
+
+    .detail-info {
+      flex-shrink: 0;
+      width: 220px;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      border-right: 1px solid #f0f0f0;
+    }
+
+    .detail-images {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      height: 100vh;
+      padding: 0.75rem 2rem;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .detail-images::-webkit-scrollbar { display: none; }
+
+    .detail-img {
+      height: 100%;
+      max-height: 700px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .placeholder-img {
+      flex-shrink: 0;
+      height: 100%;
+      max-height: 700px;
+      aspect-ratio: 3 / 4;
+      background: #e8e8e8;
+      border-radius: 1px;
+    }
+  }
+
+  /* ── Info typography ── */
+  .info-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: #222;
+  }
+  .info-year {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: #555;
+  }
+  .info-medium {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: #999;
+    margin-top: 0.5rem;
+  }
+  .info-dims {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: #bbb;
+  }
+  .info-blurb {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: #999;
+    line-height: 1.65;
+    margin-top: 1.25rem;
+  }
+</style>
