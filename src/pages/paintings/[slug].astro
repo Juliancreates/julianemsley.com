@@ -12,6 +12,7 @@ const { piece } = Astro.props;
 
 <Base title={`${piece.title} | Julian Emsley`} fullBleed={true}>
   <div class="detail">
+    <a href="/" class="close-link close-mobile">← Paintings</a>
     <div class="detail-images">
       {piece.images.map(img => (
         <Image
@@ -29,7 +30,7 @@ const { piece } = Astro.props;
       <div class="placeholder-img"></div>
     </div>
     <div class="detail-info">
-      <a href="/" class="close-link">← Paintings</a>
+      <a href="/" class="close-link close-desktop">← Paintings</a>
       <p class="info-title">{piece.title}</p>
       <p class="info-year">{piece.year}</p>
       <p class="info-medium">{piece.medium}</p>
@@ -79,6 +80,12 @@ const { piece } = Astro.props;
       border-radius: 1px;
     }
 
+    .close-mobile {
+      flex-shrink: 0;
+      padding: 0.75rem 1rem 0;
+    }
+    .close-desktop { display: none; }
+
     .detail-info {
       flex: 1;
       min-height: 0;
@@ -87,7 +94,6 @@ const { piece } = Astro.props;
       display: flex;
       flex-direction: column;
       gap: 0.35rem;
-      border-top: 1px solid #f0f0f0;
     }
   }
 
@@ -145,6 +151,10 @@ const { piece } = Astro.props;
       background: #e8e8e8;
       border-radius: 1px;
     }
+  }
+
+  @media (min-width: 768px) {
+    .close-mobile { display: none; }
   }
 
   /* ── Info typography ── */
