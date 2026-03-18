@@ -11,11 +11,14 @@ const { pieces, section } = Astro.props;
 ---
 
 <div class="gallery">
-  {pieces.map((piece) => (
-    <figure>
+  {pieces.map((piece) => {
+    const img = piece.images[0].src;
+    const aspect = img.width / img.height;
+    return (
+    <figure style={`--aspect: ${aspect};`}>
       <a href={`/${section}/${piece.slug}`} class="gallery-link">
         <Image
-          src={piece.images[0].src}
+          src={img}
           alt={piece.images[0].alt}
           width={1400}
           quality={88}
@@ -30,14 +33,14 @@ const { pieces, section } = Astro.props;
         <p class="fig-dims">{piece.dimensions}</p>
       </figcaption>
     </figure>
-  ))}
+    );
+  })}
 </div>
 
 <style>
   .gallery {
     display: flex;
-    align-items: flex-end;
-    gap: 0.5rem;
+    gap: 1rem;
     overflow-x: auto;
     overflow-y: hidden;
     height: 100svh;
@@ -51,11 +54,12 @@ const { pieces, section } = Astro.props;
   }
 
   figure {
-    flex-shrink: 0;
+    flex: none;
+    /* Width = (gallery height - vertical padding - caption area) × aspect ratio */
+    width: calc((100svh - 1.5rem - 4.5rem) * var(--aspect));
     display: flex;
     flex-direction: column;
     height: 100%;
-    justify-content: flex-end;
   }
 
   .gallery-link {
@@ -66,7 +70,6 @@ const { pieces, section } = Astro.props;
 
   .gallery-link img {
     height: 100%;
-    max-height: 640px;
     width: auto;
     display: block;
     object-fit: contain;
@@ -115,7 +118,9 @@ const { pieces, section } = Astro.props;
     .gallery {
       height: 100vh;
       padding: 0.75rem 1rem 0.75rem 300px;
-      gap: 0.5rem;
+    }
+    figure {
+      width: calc((100vh - 1.5rem - 4.5rem) * var(--aspect));
     }
   }
 </style>
