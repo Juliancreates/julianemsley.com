@@ -6,6 +6,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Artist portfolio for Julian Emsley.
 
+## User context
+Julian is the artist and site owner, not a developer. When explaining things, keep it plain and non-technical. When a task involves committing, pushing to GitHub, or deploying to Vercel, remind him of the relevant steps from `GUIDE.md` rather than assuming he knows the workflow. If something goes wrong, explain it simply and offer the fix. After making changes, remind him to:
+1. Open a new terminal tab (`Cmd + T`)
+2. Run `cd /Users/julian/Documents/JE.com && npm run dev`
+3. Open http://localhost:4321 in his browser to check the changes
+4. Press `Ctrl + C` in that terminal tab when done previewing
+
+Always give these steps explicitly — do not assume the dev server is already running.
+
 ## Stack
 - Astro 5 (static output, Sharp image optimization)
 - Vercel deployment (staging: julian.jamie.cx, production: julianemsley.com)
