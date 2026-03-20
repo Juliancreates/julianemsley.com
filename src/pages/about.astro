@@ -1,15 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
-import { Image } from 'astro:assets';
-// Add AboutImage.png to src/assets/images/ then uncomment:
-// import aboutImage from '../assets/images/AboutImage.png';
 ---
 <Base title="About | Julian Emsley" bodyScroll={true}>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <div class="about">
-    {/* Replace with: <Image src={aboutImage} alt="Julian Emsley" width={400} quality={88} class="profile-img" /> */}
+    <img src="/images/AboutImage.png" alt="Julian Emsley" class="profile-img" />
 
     <blockquote>
       "As an artist, I am fascinated by the interplay between texture and social psychology. Texture, for me, is not just a visual or tactile element, but also a psychological one. I believe that the textures we encounter in our daily lives have a profound impact on our emotional and cognitive states."

@@ -24,9 +24,9 @@ const { piece } = Astro.props;
           class="detail-img"
         />
       ))}
-      <div class="placeholder-img"></div>
-      <div class="placeholder-img"></div>
-      <div class="placeholder-img"></div>
+      {piece.video && (
+        <video class="detail-video" src={piece.video} autoplay muted loop playsinline />
+      )}
     </div>
     <div class="detail-info">
       <p class="info-title">{piece.title}</p>
@@ -34,6 +34,9 @@ const { piece } = Astro.props;
       <p class="info-medium">{piece.medium}</p>
       <p class="info-dims">{piece.dimensions}</p>
       {piece.blurb && <p class="info-blurb">{piece.blurb}</p>}
+      {piece.sold && <p class="info-sold">{piece.sold}</p>}
+      {piece.buyLink && <a href={piece.buyLink} class="buy-btn" target="_blank" rel="noopener">BUY</a>}
+      <a href="/vessels" class="back-link">← Vessels</a>
     </div>
   </div>
 </Base>
@@ -135,6 +138,15 @@ const { piece } = Astro.props;
       display: block;
     }
 
+    .detail-video {
+      height: 100%;
+      max-height: 700px;
+      width: auto;
+      flex-shrink: 0;
+      display: block;
+      object-fit: contain;
+    }
+
     .placeholder-img {
       flex-shrink: 0;
       height: 100%;
@@ -174,4 +186,35 @@ const { piece } = Astro.props;
     line-height: 1.65;
     margin-top: 1.25rem;
   }
+  .info-sold {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #bbb;
+    margin-top: 1.25rem;
+  }
+  .buy-btn {
+    display: inline-block;
+    align-self: flex-start;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: #fff;
+    background: #222;
+    text-decoration: none;
+    padding: 0.35rem 0.75rem;
+    margin-top: 1.25rem;
+    transition: background 0.2s ease;
+  }
+  .buy-btn:hover { background: #000; }
+  .back-link {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: #bbb;
+    text-decoration: none;
+    margin-top: auto;
+    padding-bottom: 2.5rem;
+    transition: color 0.2s ease;
+  }
+  .back-link:hover { color: #222; }
 </style>

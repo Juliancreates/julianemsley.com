@@ -8,9 +8,20 @@ export interface Piece {
   year: string;
   dimensions: string;
   blurb?: string;
+  sold?: string;
+  buyLink?: string;
+  video?: string;
 }
 
 import painting11 from '../assets/images/paintings/painting 11.png';
+import tideAndChar2 from '../assets/images/paintings/tide-and-char-2.jpg';
+import tideAndChar3 from '../assets/images/paintings/tide-and-char-3.jpg';
+import tideAndChar4 from '../assets/images/paintings/tide-and-char-4.jpg';
+import resinAndSalt2 from '../assets/images/paintings/resin-and-salt-2.jpg';
+import resinAndSalt3 from '../assets/images/paintings/resin-and-salt-3.jpg';
+import resinAndSalt4 from '../assets/images/paintings/resin-and-salt-4.jpg';
+import resinAndSalt5 from '../assets/images/paintings/resin-and-salt-5.jpg';
+import resinAndSalt6 from '../assets/images/paintings/resin-and-salt-6.jpg';
 import painting8  from '../assets/images/paintings/painting 8.jpg';
 import painting9  from '../assets/images/paintings/painting 9.jpg';
 import painting10 from '../assets/images/paintings/painting 10.jpg';
@@ -29,8 +40,8 @@ import painting6  from '../assets/images/paintings/painting 6.jpg';
 import painting7  from '../assets/images/paintings/painting 7.jpg';
 
 export const paintings: Piece[] = [
-  { slug: 'resin-and-salt',        images: [{ src: painting11, alt: 'Resin and salt' }],         title: 'Resin and salt',         medium: 'Encaustic, coarse salt, iron',        year: '2023', dimensions: '80 × 80 cm',  blurb: 'Coarse salt crystals pressed into hot encaustic wax, left to dissolve and leave voids. The iron ground beneath bleeds through where the surface has been scraped back.' },
-  { slug: 'tide-and-char',         images: [{ src: painting8,  alt: 'Tide and char' }],           title: 'Tide and char',          medium: 'Burnt oak, pigment, resin',           year: '2023', dimensions: '100 × 80 cm', blurb: 'Oak panel scorched with a flame until the grain opens and chars. Raw pigment rubbed into the blackened surface, then sealed under a thin pour of resin.' },
+  { slug: 'resin-and-salt',        images: [{ src: painting11, alt: 'Resin and salt' }, { src: resinAndSalt2, alt: 'Resin and salt' }, { src: resinAndSalt3, alt: 'Resin and salt' }, { src: resinAndSalt4, alt: 'Resin and salt' }, { src: resinAndSalt5, alt: 'Resin and salt' }, { src: resinAndSalt6, alt: 'Resin and salt' }],         title: 'Charcoal Hills Triptych',         medium: 'Charcoal, paint, ink, resin on wood panel', year: '2025', dimensions: '130 × 106 cm', blurb: 'Coarse salt crystals pressed into hot encaustic wax, left to dissolve and leave voids. The iron ground beneath bleeds through where the surface has been scraped back.', sold: 'Sold' },
+  { slug: 'tide-and-char',         images: [{ src: painting8, alt: 'Tide and char' }, { src: tideAndChar2, alt: 'Tide and char' }, { src: tideAndChar3, alt: 'Tide and char' }, { src: tideAndChar4, alt: 'Tide and char' }],           title: 'Smoke On The Hills I',          medium: 'Paint, ink, charcoal, pastel, chalk on carved wood panel',           year: '2025', dimensions: '107 × 98 cm', blurb: 'Oak panel scorched with a flame until the grain opens and chars. Raw pigment rubbed into the blackened surface, then sealed under a thin pour of resin.', sold: '£990', buyLink: 'https://buy.stripe.com/3cI5kC7c34YIfZtarE9EI00' },
   { slug: 'dense-morning',         images: [{ src: painting9,  alt: 'Dense morning' }],           title: 'Dense morning',          medium: 'Oil on fire-treated panel',           year: '2022', dimensions: '60 × 80 cm',  blurb: 'A slow study of early light over flat ground. The panel was flame-treated before painting, leaving a faint smoke residue beneath the oil.' },
   { slug: 'ember-field',           images: [{ src: painting10, alt: 'Ember field' }],             title: 'Ember field',            medium: 'Scorched oak, raw pigment',           year: '2024', dimensions: '90 × 70 cm',  blurb: 'The panel was taken to the point of combustion and extinguished. Dry pigment was applied while the wood was still warm, bonding loosely into the char.' },
   { slug: 'deep-varnish',          images: [{ src: painting12, alt: 'Deep varnish' }],            title: 'Deep varnish',           medium: 'Layers of pine resin, oil',           year: '2022', dimensions: '70 × 50 cm',  blurb: 'Built up over several months in alternating layers of pine resin and oil, each allowed to fully cure before the next was applied. The depth catches light differently at each angle.' },
