@@ -54,7 +54,8 @@ const isActive = (path: string) => {
         <a href="mailto:julian@julianemsley.com">Email</a>
       </nav>
       <div class="sidebar-footer">
-        <span>julian@julianemsley.com</span>
+        <a href="mailto:julian@julianemsley.com" class="sidebar-ig">julian@julianemsley.com</a>
+        <a href="https://instagram.com/julianemsley" target="_blank" rel="noopener" class="sidebar-ig">@julianemsley</a>
       </div>
     </aside>
 
@@ -254,7 +255,9 @@ const isActive = (path: string) => {
     .sidebar-nav a.active { color: #dca26d; }
     .sidebar-nav a:hover:not(.active) { color: #000; }
 
-    .sidebar-footer { position: absolute; bottom: 2.5rem; left: 2rem; font-size: 0.75rem; color: #999; }
+    .sidebar-footer { position: absolute; bottom: 2.5rem; left: 2rem; font-size: 0.75rem; color: #999; display: flex; flex-direction: column; gap: 0.3rem; }
+    .sidebar-ig { color: #999; text-decoration: none; transition: color 0.2s ease; }
+    .sidebar-ig:hover { color: #000; }
 
     /* Regular pages: push content right of sidebar */
     main {
