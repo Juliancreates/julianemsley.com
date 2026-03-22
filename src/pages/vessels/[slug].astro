@@ -44,7 +44,7 @@ const { piece } = Astro.props;
 
 <style>
   /* ── Mobile ── */
-  @media (max-width: 767px) {
+  @media (max-width: 750px) {
     .detail {
       display: flex;
       flex-direction: column;
@@ -94,13 +94,13 @@ const { piece } = Astro.props;
   }
 
   /* ── Desktop ── */
-  @media (min-width: 768px) {
+  @media (min-width: 751px) {
     .detail {
       position: fixed;
       inset: 0;
       display: flex;
       flex-direction: row;
-      padding-left: 220px;
+      padding-left: 0;
     }
 
     .detail-info {
@@ -124,7 +124,7 @@ const { piece } = Astro.props;
       overflow-x: auto;
       overflow-y: hidden;
       height: 100vh;
-      padding: 0.75rem 2rem;
+      padding: 0.75rem 2rem 0.75rem 150px;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
     }

@@ -32,13 +32,24 @@ const isActive = (path: string) => {
         <img src="/images/signature.png" alt="Julian Emsley" />
       </a>
       <div class="nav-main-row">
-        <button class="nav-work-btn" id="nav-work-btn" aria-expanded="false">Work</button>
+        <a href="/" class={`nav-link${isActive('/') ? ' active' : ''}`}>Paintings</a>
+        <a href="/vessels" class={`nav-link${isActive('/vessels') ? ' active' : ''}`}>Vessels</a>
         <a href="/about" class={`nav-link${isActive('/about') ? ' active' : ''}`}>About</a>
-        <a href="mailto:julian@julianemsley.com" class="nav-link">Email</a>
       </div>
-      <div class="nav-sub-row" id="nav-sub-row" aria-hidden="true">
-        <a href="/" class={`sub-link${isActive('/') ? ' active' : ''}`}>Paintings</a>
-        <a href="/vessels" class={`sub-link${isActive('/vessels') ? ' active' : ''}`}>Vessels</a>
+      <div class="mobile-icons">
+        <a href="mailto:julian@julianemsley.com" class="mobile-ig">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <polyline points="2,4 12,13 22,4"/>
+          </svg>
+        </a>
+        <a href="https://instagram.com/julianemsley" target="_blank" rel="noopener" class="mobile-ig">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
       </div>
     </nav>
 
@@ -54,8 +65,19 @@ const isActive = (path: string) => {
         <a href="mailto:julian@julianemsley.com">Email</a>
       </nav>
       <div class="sidebar-footer">
-        <a href="mailto:julian@julianemsley.com" class="sidebar-ig">julian@julianemsley.com</a>
-        <a href="https://instagram.com/julianemsley" target="_blank" rel="noopener" class="sidebar-ig">@julianemsley</a>
+        <a href="mailto:julian@julianemsley.com" class="sidebar-ig">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <polyline points="2,4 12,13 22,4"/>
+          </svg>
+        </a>
+        <a href="https://instagram.com/julianemsley" target="_blank" rel="noopener" class="sidebar-ig">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
       </div>
     </aside>
 
@@ -66,26 +88,6 @@ const isActive = (path: string) => {
   </body>
 </html>
 
-<script>
-  const workBtn = document.getElementById('nav-work-btn');
-  const subRow  = document.getElementById('nav-sub-row');
-
-  workBtn?.addEventListener('click', () => {
-    const isOpen = subRow?.classList.contains('open');
-    if (isOpen) {
-      subRow?.classList.remove('open');
-      workBtn.classList.remove('active');
-      workBtn.setAttribute('aria-expanded', 'false');
-      subRow?.setAttribute('aria-hidden', 'true');
-    } else {
-      subRow?.classList.add('open');
-      workBtn.classList.add('active');
-      workBtn.setAttribute('aria-expanded', 'true');
-      subRow?.setAttribute('aria-hidden', 'false');
-    }
-  });
-
-</script>
 
 <style is:global>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -98,7 +100,7 @@ const isActive = (path: string) => {
 
   /* ── Logo ── */
   .logo { display: block; }
-  .logo img { height: 65px; width: auto; display: block; }
+  .logo img { height: 52px; width: auto; display: block; }
 
   /* ── Shared ── */
   .section-label {
@@ -112,7 +114,7 @@ const isActive = (path: string) => {
      MOBILE
   ═══════════════════════════════ */
 
-  @media (max-width: 767px) {
+  @media (max-width: 750px) {
     /* Lock viewport — no page scroll */
     html, body { height: 100svh; overflow: hidden; }
     body { display: flex; flex-direction: column; }
@@ -130,7 +132,7 @@ const isActive = (path: string) => {
     }
 
     .nav-logo img {
-      height: 39px;
+      height: 31px;
       width: auto;
       display: block;
     }
@@ -142,18 +144,6 @@ const isActive = (path: string) => {
       gap: 2rem;
     }
 
-    .nav-work-btn {
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      color: #999;
-      transition: color 0.2s ease;
-    }
-    .nav-work-btn:hover, .nav-work-btn.active { color: #dca26d; }
-
     .nav-link {
       font-family: 'Lato', sans-serif;
       font-size: 14px;
@@ -164,31 +154,25 @@ const isActive = (path: string) => {
     .nav-link:hover { color: #000; }
     .nav-link.active { color: #dca26d; }
 
-    /* Sub-row: slides in below main nav row */
-    .nav-sub-row {
+    .mobile-nav-bar { position: relative; }
+    .mobile-icons {
+      position: absolute;
+      right: 20px;
+      top: calc(1.25rem + 31px + 0.75rem + 10px);
+      transform: translateY(-50%);
       display: flex;
-      justify-content: center;
-      gap: 2rem;
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.3s ease, padding 0.3s ease;
+      align-items: center;
+      gap: 0.75rem;
     }
-    .nav-sub-row.open {
-      max-height: 3rem;
-      padding: 0.5rem 0 0.75rem;
-    }
-
-    .sub-link {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
+    .mobile-ig {
       color: #999;
-      text-decoration: none;
+      display: flex;
+      align-items: center;
       transition: color 0.2s ease;
     }
-    .sub-link:hover { color: #000; }
-    .sub-link.active { color: #dca26d; }
+    .mobile-ig:hover { color: #000; }
 
-    /* Main: flex child fills remaining viewport height */
+/* Main: flex child fills remaining viewport height */
     main {
       flex: 1;
       min-height: 0;
@@ -210,7 +194,7 @@ const isActive = (path: string) => {
   }
 
   /* About page (and any bodyScroll page): allow normal document scroll so Safari hides its UI on scroll */
-  @media (max-width: 767px) {
+  @media (max-width: 750px) {
     html.body-scroll,
     html.body-scroll body {
       height: auto;
@@ -229,14 +213,14 @@ const isActive = (path: string) => {
   }
 
   /* Hide mobile elements at desktop widths */
-  @media (min-width: 768px) {
+  @media (min-width: 751px) {
     .mobile-nav-bar { display: none; }
   }
 
   /* ═══════════════════════════════
      DESKTOP
   ═══════════════════════════════ */
-  @media (min-width: 768px) {
+  @media (min-width: 751px) {
     /* Sidebar: fixed, transparent, always on top */
     .sidebar {
       display: flex;
@@ -244,10 +228,11 @@ const isActive = (path: string) => {
       gap: 2.5rem;
       position: fixed;
       top: 0; left: 0;
-      width: 180px;
+      width: 160px;
       height: 100vh;
       padding: 2.5rem 2rem;
       z-index: 10;
+      background: rgba(255, 255, 255, 0);
     }
 
     .sidebar-nav { display: flex; flex-direction: column; gap: 2.5rem; }
@@ -255,13 +240,14 @@ const isActive = (path: string) => {
     .sidebar-nav a.active { color: #dca26d; }
     .sidebar-nav a:hover:not(.active) { color: #000; }
 
-    .sidebar-footer { position: absolute; bottom: 2.5rem; left: 2rem; font-size: 0.75rem; color: #999; display: flex; flex-direction: column; gap: 0.3rem; }
+    .sidebar-footer { position: absolute; bottom: 1.5625rem; left: 2rem; color: #999; display: flex; flex-direction: column; gap: 0.35rem; }
     .sidebar-ig { color: #999; text-decoration: none; transition: color 0.2s ease; }
+    .sidebar-ig:first-child { margin-top: 1.4rem; }
     .sidebar-ig:hover { color: #000; }
 
     /* Regular pages: push content right of sidebar */
     main {
-      margin-left: 180px;
+      margin-left: 160px;
       padding: 2.5rem;
       min-height: 100vh;
       overflow-y: auto;
