@@ -37,7 +37,7 @@ const { piece } = Astro.props;
       {piece.blurb && <p class="info-blurb">{piece.blurb}</p>}
       {piece.sold && <p class="info-sold">{piece.sold}</p>}
       {piece.buyLink && <a href={piece.buyLink} class="buy-btn" target="_blank" rel="noopener">BUY</a>}
-      <a href="/vessels" class="back-link">← BACK</a>
+      <a href={`/vessels#${piece.slug}`} class="back-link">← BACK</a>
     </div>
   </div>
 </Base>

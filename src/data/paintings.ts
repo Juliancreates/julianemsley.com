@@ -15,47 +15,54 @@ export interface Piece {
 }
 
 import painting11 from '../assets/images/paintings/painting 11.png';
-import tideAndChar2 from '../assets/images/paintings/tide-and-char-2.jpg';
-import tideAndChar3 from '../assets/images/paintings/tide-and-char-3.jpg';
-import tideAndChar4 from '../assets/images/paintings/tide-and-char-4.jpg';
+import smokeOnTheHillsI5 from '../assets/images/paintings/smoke-on-the-hills-i-5.jpg';
+import smokeOnTheHillsI6 from '../assets/images/paintings/smoke-on-the-hills-i-6.jpg';
 import resinAndSalt2 from '../assets/images/paintings/resin-and-salt-2.jpg';
 import resinAndSalt3 from '../assets/images/paintings/resin-and-salt-3.jpg';
 import resinAndSalt4 from '../assets/images/paintings/resin-and-salt-4.jpg';
 import resinAndSalt5 from '../assets/images/paintings/resin-and-salt-5.jpg';
-import resinAndSalt6 from '../assets/images/paintings/resin-and-salt-6.jpg';
 import painting8  from '../assets/images/paintings/painting 8.jpg';
 import painting9  from '../assets/images/paintings/painting 9.jpg';
+import denseMorning2 from '../assets/images/paintings/dense-morning-2.jpg';
 import painting10 from '../assets/images/paintings/painting 10.jpg';
-import painting12 from '../assets/images/paintings/painting 12.jpg';
-import painting13 from '../assets/images/paintings/painting 13.jpg';
+import emberField3 from '../assets/images/paintings/ember-field-3.jpg';
+import emberField4 from '../assets/images/paintings/ember-field-4.jpg';
+import emberField5 from '../assets/images/paintings/ember-field-5.jpg';
 import painting14 from '../assets/images/paintings/painting 14.jpg';
+import slowFire2 from '../assets/images/paintings/slow-fire-2.jpg';
+import slowFire4 from '../assets/images/paintings/slow-fire-4.jpg';
+import slowFire5 from '../assets/images/paintings/slow-fire-5.jpg';
 import painting15 from '../assets/images/paintings/painting 15.jpg';
+import paleGround2 from '../assets/images/paintings/pale-ground-2.jpg';
+import paleGround3 from '../assets/images/paintings/pale-ground-3.jpg';
 import painting16 from '../assets/images/paintings/painting 16.jpg';
+import smokeLine2 from '../assets/images/paintings/smoke-line-2.jpg';
 import painting17 from '../assets/images/paintings/painting 17.jpg';
+import nightResin2 from '../assets/images/paintings/night-resin-2.jpg';
+import contrastSeriesI3 from '../assets/images/paintings/contrast-series-i-3.jpg';
+import contrastSeriesI4 from '../assets/images/paintings/contrast-series-i-4.jpg';
 import painting1  from '../assets/images/paintings/Painting 1.jpg';
-import painting2  from '../assets/images/paintings/painting 2.jpg';
+import charAndField2 from '../assets/images/paintings/char-and-field-2.jpg';
+import charAndField3 from '../assets/images/paintings/char-and-field-3.jpg';
 import painting3  from '../assets/images/paintings/painting 3.jpg';
-import painting4  from '../assets/images/paintings/painting 4.jpg';
+import lowSmoke2 from '../assets/images/paintings/low-smoke-2.jpg';
 import painting5  from '../assets/images/paintings/painting 5.jpg';
-import painting6  from '../assets/images/paintings/painting 6.jpg';
-import painting7  from '../assets/images/paintings/painting 7.jpg';
+import grainBurning3 from '../assets/images/paintings/grain-burning-3.jpg';
+import theLastFieldNew from '../assets/images/paintings/the-last-field-new.jpg';
+import charcoalDiptych2 from '../assets/images/paintings/charcoal-diptych-2.jpg';
+import charcoalDiptych3 from '../assets/images/paintings/charcoal-diptych-3.jpg';
 
 export const paintings: Piece[] = [
-  { slug: 'resin-and-salt',        images: [{ src: painting11, alt: 'Resin and salt' }, { src: resinAndSalt2, alt: 'Resin and salt' }, { src: resinAndSalt3, alt: 'Resin and salt' }, { src: resinAndSalt4, alt: 'Resin and salt' }, { src: resinAndSalt5, alt: 'Resin and salt' }, { src: resinAndSalt6, alt: 'Resin and salt' }],         title: 'Charcoal Hills Triptych',         medium: 'Charcoal, paint, ink, resin on wood panel', year: '2025', dimensions: '130 × 106 cm', blurb: 'Coarse salt crystals pressed into hot encaustic wax, left to dissolve and leave voids. The iron ground beneath bleeds through where the surface has been scraped back.', price: 'SOLD' },
-  { slug: 'tide-and-char',         images: [{ src: painting8, alt: 'Tide and char' }, { src: tideAndChar2, alt: 'Tide and char' }, { src: tideAndChar3, alt: 'Tide and char' }, { src: tideAndChar4, alt: 'Tide and char' }],           title: 'Smoke On The Hills I',          medium: 'Paint, ink, charcoal, pastel, chalk on carved wood panel',           year: '2025', dimensions: '107 × 98 cm', blurb: 'Oak panel scorched with a flame until the grain opens and chars. Raw pigment rubbed into the blackened surface, then sealed under a thin pour of resin.', buyLink: 'https://buy.stripe.com/3cI5kC7c34YIfZtarE9EI00', price: '£990' },
-  { slug: 'dense-morning',         images: [{ src: painting9,  alt: 'Dense morning' }],           title: 'Dense morning',          medium: 'Oil on fire-treated panel',           year: '2022', dimensions: '60 × 80 cm',  blurb: 'A slow study of early light over flat ground. The panel was flame-treated before painting, leaving a faint smoke residue beneath the oil.', price: 'POA' },
-  { slug: 'ember-field',           images: [{ src: painting10, alt: 'Ember field' }],             title: 'Ember field',            medium: 'Scorched oak, raw pigment',           year: '2024', dimensions: '90 × 70 cm',  blurb: 'The panel was taken to the point of combustion and extinguished. Dry pigment was applied while the wood was still warm, bonding loosely into the char.', price: 'POA' },
-  { slug: 'deep-varnish',          images: [{ src: painting12, alt: 'Deep varnish' }],            title: 'Deep varnish',           medium: 'Layers of pine resin, oil',           year: '2022', dimensions: '70 × 50 cm',  blurb: 'Built up over several months in alternating layers of pine resin and oil, each allowed to fully cure before the next was applied. The depth catches light differently at each angle.', price: 'POA' },
-  { slug: 'wood-and-weather',      images: [{ src: painting13, alt: 'Wood and weather' }],        title: 'Wood and weather',       medium: 'Scorched panel, earth pigment',       year: '2023', dimensions: '100 × 75 cm', blurb: 'Found oak left outdoors for a season, then scorched. The weathering pattern is preserved beneath the char, visible where the flame burned unevenly.', price: 'POA' },
-  { slug: 'slow-fire',             images: [{ src: painting14, alt: 'Slow fire' }],               title: 'Slow fire',              medium: 'Fire-darkened oak, resin pour',       year: '2024', dimensions: '80 × 60 cm',  blurb: 'A controlled burn held close to the surface for an extended time. The resin was poured molten and moved with gravity, pooling where the surface dipped.', price: 'POA' },
-  { slug: 'pale-ground',           images: [{ src: painting15, alt: 'Pale ground' }],             title: 'Pale ground',            medium: 'Encaustic, bleached linen',           year: '2023', dimensions: '60 × 90 cm',  blurb: 'Bleached linen encased in clear encaustic wax, worked until the surface became almost translucent. Minimal marks, most of the painting is the material itself.', price: 'POA' },
-  { slug: 'smoke-line',            images: [{ src: painting16, alt: 'Smoke line' }],              title: 'Smoke line',             medium: 'Oil, raw ash on panel',               year: '2022', dimensions: '90 × 70 cm',  blurb: 'Ash from the studio fire mixed into oil and applied in a single pass. The brush was loaded once; what it left is what remains.', price: 'POA' },
-  { slug: 'night-resin',           images: [{ src: painting17, alt: 'Night resin' }],             title: 'Night resin',            medium: 'Poured resin, charcoal, iron oxide',  year: '2024', dimensions: '100 × 80 cm', blurb: 'Charcoal and iron oxide suspended in resin, poured in the dark and left overnight. The pigments settled unevenly as the resin cured.', price: 'POA' },
-  { slug: 'char-and-field',        images: [{ src: painting1,  alt: 'Char and field' }],          title: 'Char and field',         medium: 'Burnt oak, iron oxide',               year: '2023', dimensions: '90 × 70 cm',  blurb: 'Iron oxide applied over a fully charred surface. Where the char was deepest the oxide sits on top; where it was lighter it sinks in and stains.', price: 'POA' },
-  { slug: 'still-water-dark-edge', images: [{ src: painting2,  alt: 'Still water, dark edge' }],  title: 'Still water, dark edge', medium: 'Resin, charcoal on linen',            year: '2023', dimensions: '80 × 60 cm',  blurb: 'Charcoal dust mixed into resin and poured slowly over linen stretched flat. The edge darkened as the resin pulled toward it while curing.', price: 'POA' },
-  { slug: 'low-smoke',             images: [{ src: painting3,  alt: 'Low smoke' }],               title: 'Low smoke',              medium: 'Oil, ash on panel',                   year: '2022', dimensions: '100 × 75 cm', blurb: 'Studio ash worked into oil paint on an oak panel. The ash resists full integration and remains partially visible as texture throughout.', price: 'POA' },
-  { slug: 'tallow-light',          images: [{ src: painting4,  alt: 'Tallow light' }],            title: 'Tallow light',           medium: 'Beeswax, pine resin on oak',          year: '2023', dimensions: '60 × 80 cm',  blurb: 'Beeswax and pine resin heated together and poured hot. The mixture cools at different rates on oak, leaving a surface that varies from matte to glossy across its extent.', price: 'POA' },
-  { slug: 'grain-burning',         images: [{ src: painting5,  alt: 'Grain, burning' }],          title: 'Grain, burning',         medium: 'Scorched panel, iron ground',         year: '2022', dimensions: '90 × 90 cm',  blurb: 'The flame was moved with the grain of the wood, emphasising its structure. Iron oxide was applied after scorching and burnished into the open grain.', price: 'POA' },
-  { slug: 'the-last-field',        images: [{ src: painting6,  alt: 'The last field' }],          title: 'The last field',         medium: 'Oil, resin on linen',                 year: '2023', dimensions: '80 × 60 cm',  blurb: 'Painted from memory of a specific field at a specific time of year. The oil and resin were mixed wet, allowed to pull apart as they dried.', price: 'POA' },
-  { slug: 'amber-interior',        images: [{ src: painting7,  alt: 'Amber interior' }],          title: 'Amber interior',         medium: 'Pine resin, beeswax, oil',            year: '2024', dimensions: '70 × 100 cm', blurb: 'Pine resin dominates, giving the surface a deep amber tone that shifts with the light. Beeswax was used to soften certain areas and reduce the resin\'s gloss.', price: 'POA' },
+  { slug: 'slow-fire',             images: [{ src: slowFire4, alt: 'Slow fire' }, { src: painting14, alt: 'Slow fire' }, { src: slowFire2, alt: 'Slow fire' }, { src: slowFire5, alt: 'Slow fire' }],               title: 'Smoke Series Triptych',              medium: 'Paint, charcoal, resin on wood panel',       year: '2025', dimensions: '105 × 55 cm framed x 3',  price: '£2000' },
+  { slug: 'smoke-on-the-hills-ii',        images: [{ src: painting1,  alt: 'Char and field' }, { src: charAndField2, alt: 'Char and field' }, { src: charAndField3, alt: 'Char and field' }],          video: '/images/char-and-field.mov', title: 'Smoke On The Hills II',         medium: 'Paint, charcoal, pastel, chalk, ink on carved wood panel',               year: '2025', dimensions: '100 × 70 cm',  price: '£1000' },
+  { slug: 'smoke-on-the-hills-i',         images: [{ src: painting8, alt: 'Tide and char' }, { src: smokeOnTheHillsI5, alt: 'Tide and char' }, { src: smokeOnTheHillsI6, alt: 'Tide and char' }],           title: 'Smoke On The Hills I',          medium: 'Paint, ink, charcoal, pastel, chalk on carved wood panel',           year: '2025', dimensions: '107 × 98 cm', price: 'SOLD' },
+  { slug: 'fire-in-the-hills',         images: [{ src: painting5,  alt: 'Grain, burning' }, { src: grainBurning3, alt: 'Grain, burning' }],          video: '/images/grain-burning.mov', title: 'Fire In The Hills',         medium: 'Paint, charcoal, pastel, chalk, ink on carved wood panel',         year: '2022', dimensions: '99 × 53 cm',  price: '£800' },
+  { slug: 'south-downs',             images: [{ src: painting3,  alt: 'Low smoke' }, { src: lowSmoke2, alt: 'Low smoke' }],               video: '/images/low-smoke.mov', title: 'South Downs',              medium: 'Acrylic, charcoal, pastel, South Downs chalk, ink on carved wood panel',                   year: '2025', dimensions: '100 × 70 cm', blurb: 'This painting was inspired by the hazy days on the South Downs. During a walk along the Downs, I picked up some chalk. Once back at the studio I ground it into a fine dust and used it in this painting to add a layer of depth and texture.', price: '£950' },
+  { slug: 'resin-and-salt',        images: [{ src: painting11, alt: 'Resin and salt' }, { src: resinAndSalt2, alt: 'Resin and salt' }, { src: resinAndSalt3, alt: 'Resin and salt' }, { src: resinAndSalt4, alt: 'Resin and salt' }, { src: resinAndSalt5, alt: 'Resin and salt' }],         title: 'Charcoal Hills Triptych',         medium: 'Charcoal, paint, ink, resin on wood panel', year: '2024', dimensions: '130 × 106 cm', blurb: 'This painting is a mixture of charcoal and acrylic paint. Inspired by the graphic landscapes left after wildfires.', price: 'SOLD' },
+  { slug: 'ember-field',           images: [{ src: painting10, alt: 'Ember field' }, { src: emberField3, alt: 'Ember field' }, { src: emberField4, alt: 'Ember field' }, { src: emberField5, alt: 'Ember field' }],             title: 'Charcoal Fields',            medium: 'Charcoal, paint, ink, resin on wood panel',           year: '2025', dimensions: '107 × 38 cm framed x 3',  blurb: 'This triptych is made up of charcoal, chalk, resin and ink. I\'ve also used tools to carve into the resin to create texture. Each blade of grass in the lower half of the painting has been scratched into the resin.', price: '£1000' },
+  { slug: 'dense-morning',         images: [{ src: painting9,  alt: 'Dense morning' }, { src: denseMorning2, alt: 'Dense morning' }],           title: 'Dense Morning',          medium: 'Ink, pastel, chalk, acrylic on wood panel',           year: '2025', dimensions: '105 × 55 cm Framed', price: '£800' },
+  { slug: 'contrast-series-i',           images: [{ src: painting17, alt: 'Night resin' }, { src: contrastSeriesI3, alt: 'Night resin' }, { src: nightResin2, alt: 'Night resin' }, { src: contrastSeriesI4, alt: 'Night resin' }],             title: 'Contrast Series I',            medium: 'Paint, charcoal, ink on wood panel',  year: '2025', dimensions: '105 × 55 cm framed', price: 'SOLD' },
+  { slug: 'inner-conflict',            images: [{ src: painting16, alt: 'Smoke line' }, { src: smokeLine2, alt: 'Smoke line' }],              title: 'Inner Conflict',             medium: 'Paint, charcoal, ink, wood, resin on wood panel',               year: '2025', dimensions: '105 × 50 cm framed', price: '£750' },
+  { slug: 'conflict-series',           images: [{ src: painting15, alt: 'Pale ground' }, { src: paleGround2, alt: 'Pale ground' }, { src: paleGround3, alt: 'Pale ground' }],             title: 'Conflict Series',            medium: 'Paint, charcoal, ink, wood, resin on wood panel',           year: '2025', dimensions: '105 × 55 cm framed',  price: '£850' },
+  { slug: 'charcoal-diptych',        images: [{ src: theLastFieldNew,  alt: 'The last field' }, { src: charcoalDiptych2, alt: 'The last field' }, { src: charcoalDiptych3, alt: 'The last field' }],          title: 'Charcoal Diptych',         medium: 'Paint, charcoal, resin on wood panel',                 year: '2025', dimensions: '85 × 45 cm framed x 2',  price: '£750' },
 ];
