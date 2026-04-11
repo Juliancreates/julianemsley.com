@@ -10,7 +10,7 @@ export function getStaticPaths() {
 const { piece } = Astro.props;
 ---
 
-<Base title={`${piece.title} | Julian Emsley`} fullBleed={true}>
+<Base title={`${piece.title} | Julian Emsley`} fullBleed={true} noNav={true} noFooter={true}>
   <div class="detail">
     <div class="detail-images">
       {piece.images.map(img => (
@@ -37,7 +37,7 @@ const { piece } = Astro.props;
       {piece.blurb && <p class="info-blurb">{piece.blurb}</p>}
       {piece.sold && <p class="info-sold">{piece.sold}</p>}
       {piece.buyLink && <a href={piece.buyLink} class="buy-btn" target="_blank" rel="noopener">BUY</a>}
-      <a href="/vessels" class="back-link">← Vessels</a>
+      <a href="/vessels" class="back-link">← BACK</a>
     </div>
   </div>
 </Base>
@@ -108,7 +108,8 @@ const { piece } = Astro.props;
       width: 220px;
       height: 100vh;
       overflow-y: auto;
-      padding: 2.5rem 2rem;
+      padding: max(2rem, calc((100vh - 750px) / 2)) 2rem 2rem;
+      text-align: right;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
@@ -120,11 +121,11 @@ const { piece } = Astro.props;
       min-width: 0;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 1.5rem;
       overflow-x: auto;
       overflow-y: hidden;
       height: 100vh;
-      padding: 0.75rem 2rem 0.75rem 150px;
+      padding: 0.75rem 2rem 0.75rem 2.5rem;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
     }
@@ -132,7 +133,7 @@ const { piece } = Astro.props;
 
     .detail-img {
       height: 100%;
-      max-height: 700px;
+      max-height: 750px;
       width: auto;
       object-fit: contain;
       flex-shrink: 0;
@@ -141,7 +142,7 @@ const { piece } = Astro.props;
 
     .detail-video {
       height: 100%;
-      max-height: 700px;
+      max-height: 750px;
       width: auto;
       flex-shrink: 0;
       display: block;
@@ -151,7 +152,7 @@ const { piece } = Astro.props;
     .placeholder-img {
       flex-shrink: 0;
       height: 100%;
-      max-height: 700px;
+      max-height: 750px;
       aspect-ratio: 3 / 4;
       background: #e8e8e8;
       border-radius: 1px;
@@ -204,7 +205,7 @@ const { piece } = Astro.props;
   }
   .buy-btn {
     display: inline-block;
-    align-self: flex-start;
+    align-self: flex-end;
     font-family: 'Lato', sans-serif;
     font-size: 13px;
     color: #fff;
@@ -218,7 +219,8 @@ const { piece } = Astro.props;
   .back-link {
     font-family: 'Lato', sans-serif;
     font-size: 13px;
-    color: #bbb;
+    font-weight: 700;
+    color: #777;
     text-decoration: none;
     margin-top: auto;
     padding-bottom: 2.5rem;

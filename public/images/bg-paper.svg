@@ -31,9 +31,9 @@
       <feTurbulence type="turbulence" baseFrequency="0.65" numOctaves="3" seed="2" result="grain"/>
       <feColorMatrix type="saturate" values="0" in="grain" result="greyGrain"/>
       <feComponentTransfer in="greyGrain" result="subtleGrain">
-        <feFuncR type="linear" slope="0.16" intercept="0.88"/>
-        <feFuncG type="linear" slope="0.16" intercept="0.88"/>
-        <feFuncB type="linear" slope="0.16" intercept="0.88"/>
+        <feFuncR type="linear" slope="0.32" intercept="0.72"/>
+        <feFuncG type="linear" slope="0.32" intercept="0.72"/>
+        <feFuncB type="linear" slope="0.32" intercept="0.72"/>
       </feComponentTransfer>
       <feBlend in="paper" in2="subtleGrain" mode="multiply"/>
     </filter>
