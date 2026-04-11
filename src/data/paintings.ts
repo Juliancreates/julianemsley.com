@@ -28,10 +28,7 @@ import painting10 from '../assets/images/paintings/painting 10.jpg';
 import emberField3 from '../assets/images/paintings/ember-field-3.jpg';
 import emberField4 from '../assets/images/paintings/ember-field-4.jpg';
 import emberField5 from '../assets/images/paintings/ember-field-5.jpg';
-import painting14 from '../assets/images/paintings/painting 14.jpg';
-import slowFire2 from '../assets/images/paintings/slow-fire-2.jpg';
 import slowFire4 from '../assets/images/paintings/slow-fire-4.jpg';
-import slowFire5 from '../assets/images/paintings/slow-fire-5.jpg';
 import painting15 from '../assets/images/paintings/painting 15.jpg';
 import paleGround2 from '../assets/images/paintings/pale-ground-2.jpg';
 import paleGround3 from '../assets/images/paintings/pale-ground-3.jpg';
@@ -53,7 +50,7 @@ import charcoalDiptych2 from '../assets/images/paintings/charcoal-diptych-2.jpg'
 import charcoalDiptych3 from '../assets/images/paintings/charcoal-diptych-3.jpg';
 
 export const paintings: Piece[] = [
-  { slug: 'slow-fire',             images: [{ src: slowFire4, alt: 'Slow fire' }, { src: painting14, alt: 'Slow fire' }, { src: slowFire2, alt: 'Slow fire' }, { src: slowFire5, alt: 'Slow fire' }],               title: 'Smoke Series Triptych',              medium: 'Paint, charcoal, resin on wood panel',       year: '2025', dimensions: '105 × 55 cm framed x 3',  price: '£2000' },
+  { slug: 'smoke-series-triptych',             images: [{ src: slowFire4, alt: 'Slow fire' }],               video: '/images/smoke-series-triptych.mov', title: 'Smoke Series Triptych',              medium: 'Paint, charcoal, resin on wood panel',       year: '2025', dimensions: '105 × 55 cm framed x 3',  price: '£2000' },
   { slug: 'smoke-on-the-hills-ii',        images: [{ src: painting1,  alt: 'Char and field' }, { src: charAndField2, alt: 'Char and field' }, { src: charAndField3, alt: 'Char and field' }],          video: '/images/char-and-field.mov', title: 'Smoke On The Hills II',         medium: 'Paint, charcoal, pastel, chalk, ink on carved wood panel',               year: '2025', dimensions: '100 × 70 cm',  price: '£1000' },
   { slug: 'smoke-on-the-hills-i',         images: [{ src: painting8, alt: 'Tide and char' }, { src: smokeOnTheHillsI5, alt: 'Tide and char' }, { src: smokeOnTheHillsI6, alt: 'Tide and char' }],           title: 'Smoke On The Hills I',          medium: 'Paint, ink, charcoal, pastel, chalk on carved wood panel',           year: '2025', dimensions: '107 × 98 cm', price: 'SOLD' },
   { slug: 'fire-in-the-hills',         images: [{ src: painting5,  alt: 'Grain, burning' }, { src: grainBurning3, alt: 'Grain, burning' }],          video: '/images/grain-burning.mov', title: 'Fire In The Hills',         medium: 'Paint, charcoal, pastel, chalk, ink on carved wood panel',         year: '2022', dimensions: '99 × 53 cm',  price: '£800' },
