@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import Gallery from '../../components/Gallery.astro';
+import { paintings } from '../../data/paintings';
+---
+
+<Base title="Paintings — Julian Emsley" fullBleed={true}>
+  <div class="overlay" id="overlay"></div>
+  <Gallery pieces={paintings} section="paintings" />
+</Base>
+
+<script>
+  const overlay = document.getElementById('overlay');
+  if (overlay) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        overlay.classList.add('hidden');
+      });
+    });
+  }
+</script>
+
+<style>
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: #fbf7f2;
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 3s ease;
+    z-index: 100;
+  }
+  .overlay.hidden {
+    opacity: 0;
+  }
+</style>

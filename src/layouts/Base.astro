@@ -3,9 +3,12 @@ interface Props {
   title?: string;
   fullBleed?: boolean;
   bodyScroll?: boolean;
+  noNav?: boolean;
+  noLogo?: boolean;
+  noFooter?: boolean;
 }
 
-const { title = 'Julian Emsley', fullBleed = false, bodyScroll = false } = Astro.props;
+const { title = 'Julian Emsley', fullBleed = false, bodyScroll = false, noNav = false, noLogo = false, noFooter = false } = Astro.props;
 const currentPath = Astro.url.pathname;
 
 const isActive = (path: string) => {
@@ -21,69 +24,48 @@ const isActive = (path: string) => {
     <link rel="icon" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
     <title>{title}</title>
   </head>
   <body>
 
-    <!-- Mobile: persistent top nav bar -->
-    <nav class="mobile-nav-bar">
-      <a href="/" class="nav-logo">
-        <img src="/images/signature.png" alt="Julian Emsley" />
-      </a>
-      <div class="nav-main-row">
-        <a href="/" class={`nav-link${isActive('/') ? ' active' : ''}`}>Paintings</a>
-        <a href="/vessels" class={`nav-link${isActive('/vessels') ? ' active' : ''}`}>Vessels</a>
-        <a href="/about" class={`nav-link${isActive('/about') ? ' active' : ''}`}>About</a>
-      </div>
-      <div class="mobile-icons">
-        <a href="mailto:julian@julianemsley.com" class="mobile-ig">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <polyline points="2,4 12,13 22,4"/>
-          </svg>
-        </a>
-        <a href="https://instagram.com/julianemsley" target="_blank" rel="noopener" class="mobile-ig">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-          </svg>
-        </a>
-      </div>
-    </nav>
+    {!noNav && (
+      <>
+        <!-- Centered logo -->
+        {!noLogo && (
+          <a href="/" class="logo">
+            <img src="/images/signature.png" alt="Julian Emsley" />
+          </a>
+        )}
 
-    <!-- Desktop: sidebar (fixed, always on top) -->
-    <aside class="sidebar">
-      <a href="/" class="logo">
-        <img src="/images/signature.png" alt="Julian Emsley" />
-      </a>
-      <nav class="sidebar-nav">
-        <a href="/" class={isActive('/') ? 'active' : ''}>Paintings</a>
-        <a href="/vessels" class={isActive('/vessels') ? 'active' : ''}>Vessels</a>
-        <a href="/about" class={isActive('/about') ? 'active' : ''}>About</a>
-        <a href="mailto:julian@julianemsley.com">Email</a>
-      </nav>
-      <div class="sidebar-footer">
-        <a href="mailto:julian@julianemsley.com" class="sidebar-ig">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <polyline points="2,4 12,13 22,4"/>
-          </svg>
-        </a>
-        <a href="https://instagram.com/julianemsley" target="_blank" rel="noopener" class="sidebar-ig">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-          </svg>
-        </a>
-      </div>
-    </aside>
+        <!-- Name top-right -->
+        {!noLogo && (
+          <a href="https://instagram.com/julianemsley" target="_blank" rel="noopener" class="site-name">Julian Emsley</a>
+        )}
 
-    <main class={fullBleed ? 'full-bleed' : ''}>
+        <!-- Top nav links -->
+        <nav class="top-nav">
+          <a href="/" class={isActive('/') ? 'active' : ''}>Paintings</a>
+          <a href="/vessels" class={isActive('/vessels') ? 'active' : ''}>Vessels</a>
+          <a href="/about" class={isActive('/about') ? 'active' : ''}>About</a>
+        </nav>
+
+      </>
+    )}
+
+    <!-- Bottom bar -->
+    {!noFooter && (
+      <div class="bottom-bar">
+        <a href="mailto:julian@julianemsley.com" class="bottom-link">julian@julianemsley.com</a>
+        <a href="https://instagram.com/julianemsley" target="_blank" rel="noopener" class="bottom-link">@julianemsley</a>
+      </div>
+    )}
+
+    <main class={`${fullBleed ? 'full-bleed' : ''}${noNav ? ' no-nav' : ''}`}>
       <slot />
     </main>
+
+    <slot name="overlay" />
 
   </body>
 </html>
@@ -94,13 +76,80 @@ const isActive = (path: string) => {
 
   body {
     font-family: system-ui, sans-serif;
-    background: #fff;
+    background: #fbf7f2 url('/images/bg-paper.svg') repeat;
+    background-size: 1200px 900px;
     color: #222;
   }
 
   /* ── Logo ── */
-  .logo { display: block; }
-  .logo img { height: 52px; width: auto; display: block; }
+  .logo {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+  }
+  .logo img { height: 60px; width: auto; display: block; opacity: 0.7; }
+
+  /* ── Site name ── */
+  /* ── Site name ── */
+  .site-name {
+    position: fixed;
+    top: calc(1rem + 30px);
+    right: 1.75rem;
+    transform: translateY(-50%);
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #999;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    z-index: 20;
+  }
+  .site-name:hover { color: #333; }
+
+/* ── Top nav ── */
+  .top-nav {
+    position: fixed;
+    top: calc(1rem + 30px);
+    left: 1.75rem;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 2rem;
+    z-index: 20;
+  }
+  .top-nav a {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #999;
+    transition: color 0.2s ease;
+  }
+  .top-nav a.active { color: #dca26d; }
+  .top-nav a:hover:not(.active) { color: #333; }
+
+  /* ── Bottom bar ── */
+  .bottom-bar {
+    position: fixed;
+    bottom: 1.25rem;
+    left: 1.75rem;
+    right: 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    z-index: 20;
+  }
+  .bottom-link {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .bottom-link:hover { color: #555; }
 
   /* ── Shared ── */
   .section-label {
@@ -113,66 +162,10 @@ const isActive = (path: string) => {
   /* ═══════════════════════════════
      MOBILE
   ═══════════════════════════════ */
-
   @media (max-width: 750px) {
-    /* Lock viewport — no page scroll */
     html, body { height: 100svh; overflow: hidden; }
     body { display: flex; flex-direction: column; }
 
-    /* Nav bar: always visible, sits above content in flex stack */
-    .mobile-nav-bar {
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-      background: #fff;
-      padding: 1.25rem 1.25rem 0;
-      z-index: 20;
-    }
-
-    .nav-logo img {
-      height: 31px;
-      width: auto;
-      display: block;
-    }
-
-    .nav-main-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .nav-link {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      color: #999;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    .nav-link:hover { color: #000; }
-    .nav-link.active { color: #dca26d; }
-
-    .mobile-nav-bar { position: relative; }
-    .mobile-icons {
-      position: absolute;
-      right: 20px;
-      top: calc(1.25rem + 31px + 0.75rem + 10px);
-      transform: translateY(-50%);
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .mobile-ig {
-      color: #999;
-      display: flex;
-      align-items: center;
-      transition: color 0.2s ease;
-    }
-    .mobile-ig:hover { color: #000; }
-
-/* Main: flex child fills remaining viewport height */
     main {
       flex: 1;
       min-height: 0;
@@ -188,21 +181,14 @@ const isActive = (path: string) => {
       flex-direction: column;
       overflow: hidden;
     }
-
-    /* Desktop sidebar hidden on mobile */
-    .sidebar { display: none; }
   }
 
-  /* About page (and any bodyScroll page): allow normal document scroll so Safari hides its UI on scroll */
+  /* About page: allow normal document scroll */
   @media (max-width: 750px) {
     html.body-scroll,
     html.body-scroll body {
       height: auto;
       overflow: visible;
-    }
-    html.body-scroll .mobile-nav-bar {
-      position: sticky;
-      top: 0;
     }
     html.body-scroll main,
     html.body-scroll main:not(.full-bleed) {
@@ -212,54 +198,23 @@ const isActive = (path: string) => {
     }
   }
 
-  /* Hide mobile elements at desktop widths */
-  @media (min-width: 751px) {
-    .mobile-nav-bar { display: none; }
-  }
-
   /* ═══════════════════════════════
      DESKTOP
   ═══════════════════════════════ */
   @media (min-width: 751px) {
-    /* Sidebar: fixed, transparent, always on top */
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-      position: fixed;
-      top: 0; left: 0;
-      width: 160px;
-      height: 100vh;
-      padding: 2.5rem 2rem;
-      z-index: 10;
-      background: rgba(255, 255, 255, 0);
-    }
-
-    .sidebar-nav { display: flex; flex-direction: column; gap: 2.5rem; }
-    .sidebar-nav a { text-decoration: none; color: #999999; font-family: 'Lato', sans-serif; font-size: 14px; transition: color 0.2s ease; }
-    .sidebar-nav a.active { color: #dca26d; }
-    .sidebar-nav a:hover:not(.active) { color: #000; }
-
-    .sidebar-footer { position: absolute; bottom: 1.5625rem; left: 2rem; color: #999; display: flex; flex-direction: column; gap: 0.35rem; }
-    .sidebar-ig { color: #999; text-decoration: none; transition: color 0.2s ease; }
-    .sidebar-ig:first-child { margin-top: 1.4rem; }
-    .sidebar-ig:hover { color: #000; }
-
-    /* Regular pages: push content right of sidebar */
     main {
-      margin-left: 160px;
       padding: 2.5rem;
       min-height: 100vh;
       overflow-y: auto;
     }
-
-    /* Gallery pages: fill full viewport */
     main.full-bleed {
-      margin-left: 0;
       padding: 0;
       position: fixed;
       inset: 0;
       overflow: hidden;
+    }
+    main.no-nav {
+      padding: 0;
     }
   }
 

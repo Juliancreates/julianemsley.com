@@ -6,4 +6,76 @@ import { paintings } from '../data/paintings';
 
 <Base title="Julian Emsley" fullBleed={true}>
   <Gallery pieces={paintings} section="paintings" />
+  <div slot="overlay" class="overlay" id="overlay">
+    <img src="/images/signature.png" alt="Julian Emsley" class="overlay-logo" />
+    <p class="overlay-name">Julian Emsley</p>
+  </div>
 </Base>
+
+<script>
+  const overlay = document.getElementById('overlay');
+  if (overlay) {
+    const seen = sessionStorage.getItem('intro-seen');
+    if (seen) {
+      overlay.style.display = 'none';
+    } else {
+      sessionStorage.setItem('intro-seen', '1');
+      setTimeout(() => {
+        overlay.classList.add('fade-out');
+        setTimeout(() => {
+          overlay.style.display = 'none';
+        }, 4000);
+      }, 4000);
+    }
+  }
+</script>
+
+<style>
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: #fbf7f2 url('/images/bg-paper.svg') repeat;
+    background-size: 1200px 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 4s ease;
+  }
+
+  .overlay.fade-out {
+    opacity: 0;
+  }
+
+  .overlay-logo {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60px;
+    width: auto;
+    opacity: 0;
+    animation: fadeInLogo 1.4s ease forwards 0.4s;
+  }
+
+  .overlay-name {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #888;
+    opacity: 0;
+    animation: fadeIn 1.4s ease forwards 0.9s;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeInLogo {
+    to { opacity: 0.7; }
+  }
+</style>
