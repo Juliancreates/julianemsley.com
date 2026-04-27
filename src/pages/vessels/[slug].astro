@@ -35,6 +35,7 @@ const { piece } = Astro.props;
       <p class="info-dims">{piece.dimensions}</p>
       {piece.price && <p class="info-price">{piece.price}</p>}
       {piece.blurb && <p class="info-blurb">{piece.blurb}</p>}
+      {piece.caption && <p class="info-caption">{piece.caption}</p>}
       {piece.sold && <p class="info-sold">{piece.sold}</p>}
       {piece.buyLink && <a href={piece.buyLink} class="buy-btn" target="_blank" rel="noopener">BUY</a>}
       <a href={`/vessels#${piece.slug}`} class="back-link">← BACK</a>
@@ -194,6 +195,14 @@ const { piece } = Astro.props;
     color: #999;
     line-height: 1.65;
     margin-top: 1.25rem;
+  }
+  .info-caption {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    color: #bbb;
+    line-height: 1.5;
+    margin-top: 1rem;
+    font-style: italic;
   }
   .info-sold {
     font-family: 'Lato', sans-serif;

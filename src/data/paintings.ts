@@ -8,6 +8,7 @@ export interface Piece {
   year: string;
   dimensions: string;
   blurb?: string;
+  caption?: string;
   price?: string;
   sold?: string;
   buyLink?: string;

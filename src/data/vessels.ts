@@ -1,17 +1,48 @@
 import type { Piece } from './paintings';
 
 import vessel1 from '../assets/images/vessels/vessel 1.jpg';
-import vessel2 from '../assets/images/vessels/vessel 2.jpg';
+import vessel1b from '../assets/images/vessels/vessel 1-2.jpg';
 import vessel3 from '../assets/images/vessels/vessel 3.jpg';
-import vessel4 from '../assets/images/vessels/vessel 4.jpg';
+import vessel3b from '../assets/images/vessels/vessel 3-2.jpg';
 import vessel5 from '../assets/images/vessels/vessel 5.jpg';
-import vessel6 from '../assets/images/vessels/vessel 6.jpg';
+import vessel7 from '../assets/images/vessels/vessel 7.jpg';
+import vessel8 from '../assets/images/vessels/vessel 8.jpg';
+import vessel8b from '../assets/images/vessels/vessel 8-2.jpg';
+import vessel9 from '../assets/images/vessels/vessel 9.jpg';
+import vessel9b from '../assets/images/vessels/vessel 9-2.jpg';
+import vessel10 from '../assets/images/vessels/vessel 10.jpg';
+import vessel10b from '../assets/images/vessels/vessel 10-2.jpg';
+import vessel10c from '../assets/images/vessels/vessel 10-3.jpg';
+import vessel11 from '../assets/images/vessels/vessel 11.jpg';
+import vessel12 from '../assets/images/vessels/vessel 12.jpg';
+import vessel13 from '../assets/images/vessels/vessel 13.jpg';
+import vessel14 from '../assets/images/vessels/vessel 14.jpg';
+import vessel14b from '../assets/images/vessels/vessel 14-2.jpg';
+import vessel15 from '../assets/images/vessels/vessel 15.jpg';
+import vessel15b from '../assets/images/vessels/vessel 15-2.jpg';
+import vessel16 from '../assets/images/vessels/vessel 16.jpg';
+import vessel17 from '../assets/images/vessels/vessel 17.jpg';
+import vessel18 from '../assets/images/vessels/vessel 18.jpg';
+import vessel19 from '../assets/images/vessels/vessel 19.jpg';
+import vessel19b from '../assets/images/vessels/vessel 19-2.jpg';
+import vessel20 from '../assets/images/vessels/vessel 20.jpg';
+import vessel20b from '../assets/images/vessels/vessel 20-2.jpg';
 
 export const vessels: Piece[] = [
-  { slug: 'salt-form',       images: [{ src: vessel1, alt: 'Salt form' }],       title: 'Salt form',       medium: 'Thrown stoneware, ash glaze',          year: '2023', dimensions: '28 × 14 cm', blurb: 'Thrown on the wheel and left to dry slowly. The ash glaze was applied unevenly, running thicker at the base where it pooled during firing.', video: '/images/vessels/Treehouse reel.mov', price: 'POA' },
-  { slug: 'char-vessel',     images: [{ src: vessel2, alt: 'Char vessel' }],     title: 'Char vessel',     medium: 'Coil-built, fire-blackened',           year: '2022', dimensions: '35 × 18 cm', blurb: 'Coil-built over several sessions, the surface scored and compressed. Fired in a reduction atmosphere until the exterior was fully blackened.', price: 'POA' },
-  { slug: 'sealed-ewer',     images: [{ src: vessel3, alt: 'Sealed ewer' }],     title: 'Sealed ewer',     medium: 'Hand-built earthenware, pine resin',   year: '2023', dimensions: '32 × 16 cm', blurb: 'Hand-built earthenware sealed inside and out with pine resin after bisque firing. The resin darkens the surface and makes the vessel watertight without a glaze.', price: 'POA' },
-  { slug: 'wood-fired-form', images: [{ src: vessel4, alt: 'Wood-fired form' }], title: 'Wood-fired form', medium: 'Anagama, natural ash deposit',         year: '2022', dimensions: '40 × 20 cm', blurb: 'Fired for four days in an anagama kiln. The natural ash deposit from the wood settles on the surface and melts into a glaze, the markings entirely determined by the fire.', price: 'POA' },
-  { slug: 'dense-body',      images: [{ src: vessel5, alt: 'Dense body' }],      title: 'Dense body',      medium: 'Heavily grogged stoneware, reduction',  year: '2023', dimensions: '30 × 15 cm', blurb: 'Heavily grogged clay gives the walls a coarse, mineral surface. The reduction firing drew iron from the clay body, leaving dark flashing across the form.', price: 'POA' },
-  { slug: 'dark-interior',   images: [{ src: vessel6, alt: 'Dark interior' }],   title: 'Dark interior',   medium: 'Thrown and altered, iron glaze',       year: '2024', dimensions: '36 × 17 cm', blurb: 'Thrown and then pushed from the inside to distort the form. An iron-rich glaze was applied heavily to the exterior; the interior was left bare clay.', price: 'POA' },
+  { slug: 'black-locust',   images: [{ src: vessel1, alt: 'Black Locust' }, { src: vessel1b, alt: 'Black Locust' }],   title: 'Black Locust',   medium: 'Black Locust felled in Southfields, London SW18',         year: '2026', dimensions: '37 × 22 cm', blurb: 'Turned, carved, burnt and waxed.', price: '£750' },
+  { slug: 'barriers-in-black-locust',         images: [{ src: vessel3, alt: 'Barriers In Black Locust' }, { src: vessel3b, alt: 'Barriers In Black Locust' }],       title: 'Barriers In Black Locust',       medium: 'Black Locust felled in Southfields, London SW18',   year: '2026', dimensions: '32 × 20 cm', blurb: 'Turned, carved, burnt and waxed.', price: '£900' },
+  { slug: 'barriers-in-black-locust-3',         images: [{ src: vessel14, alt: 'Barriers In Black Locust' }, { src: vessel14b, alt: 'Barriers In Black Locust' }],          title: 'Barriers In Black Locust',        medium: 'Black Locust felled in Southfields, London SW18', year: '2025', dimensions: '', blurb: 'Turned, carved, burnt and waxed.', price: '£850' },
+  { slug: 'barriers-in-locust',         images: [{ src: vessel15b, alt: 'Barriers In Locust' }, { src: vessel15, alt: 'Barriers In Locust' }],          title: 'Barriers In Locust',        medium: 'Black Locust felled in Southfields, London SW18', year: '2025', dimensions: '37 × 26 cm', blurb: 'Turned, carved, burnt and waxed.', price: '£750' },
+  { slug: 'barriers-in-black-locust-2',          images: [{ src: vessel5,  alt: 'Barriers In Black Locust' }],         title: 'Barriers In Black Locust',        medium: 'Black Locust felled in Southfields, London SW18', year: '2026', dimensions: '25 × 24 cm', blurb: 'Turned, carved, burnt and waxed.', price: '£500' },
+  { slug: 'barriers-in-black-locust-4',           images: [{ src: vessel20, alt: 'Barriers In Black Locust' }, { src: vessel20b, alt: 'Barriers In Black Locust' }],             title: 'Barriers In Black Locust',           medium: 'Black Locust felled in Southfields, London SW18', year: '2026', dimensions: '', blurb: 'Turned, carved, burnt and waxed.', price: '£750' },
+  { slug: 'barriers-in-maple-2', images: [{ src: vessel8, alt: 'Barriers in Maple' }, { src: vessel8b, alt: 'Barriers in Maple' }], title: 'Barriers in Maple', medium: 'Norwegian Maple Felled in Teddington, London', year: '2025', dimensions: '27 × 24 cm', blurb: 'Turned, carved, burnt and waxed.', price: '£600' },
+  { slug: 'barriers-in-maple-3', images: [{ src: vessel9, alt: 'Barriers in Maple' }, { src: vessel9b, alt: 'Barriers in Maple' }], title: 'Barriers in Maple', medium: 'Norwegian Maple Felled in Teddington, London', year: '2025', dimensions: '30 × 24 cm', blurb: 'Turned, carved, burnt and waxed.', price: '£600' },
+  { slug: 'barriers-in-maple-4', images: [{ src: vessel10, alt: 'Barriers in Maple' }, { src: vessel10b, alt: 'Barriers in Maple' }, { src: vessel10c, alt: 'Barriers in Maple' }], title: 'Barriers in Maple', medium: 'Norwegian Maple Felled in Teddington, London', year: '2025', dimensions: '', blurb: 'Turned, carved, burnt and waxed.', price: '£400' },
+  { slug: 'barriers-in-yew',     images: [{ src: vessel11, alt: 'Barriers in Yew' }],   title: 'Barriers in Yew',  medium: '', year: '2025', dimensions: '', blurb: 'Turned, carved, burnt and waxed.', price: 'POA' },
+  { slug: 'barriers-in-yew-2',   images: [{ src: vessel12, alt: 'Barriers in Yew' }],   title: 'Barriers in Yew',  medium: '', year: '2025', dimensions: '', blurb: 'Turned, carved, burnt and waxed.', price: 'POA' },
+  { slug: 'treehouse',           images: [{ src: vessel13, alt: 'Treehouse' }],          title: 'Treehouse',        medium: '', year: '2025', dimensions: '', blurb: 'Turned, carved, burnt and waxed.', price: 'POA' },
+  { slug: 'treehouse-4',         images: [{ src: vessel16, alt: 'Treehouse' }],          title: 'Treehouse',        medium: '', year: '2025', dimensions: '', blurb: 'Turned, carved, burnt and waxed.', price: 'POA' },
+  { slug: 'vessel-17',           images: [{ src: vessel17, alt: 'Vessel' }],             title: 'Vessel',           medium: '', year: '2024', dimensions: '', blurb: 'Turned, carved, burnt and waxed.', price: 'POA' },
+  { slug: 'vessel-18',           images: [{ src: vessel18, alt: 'Vessel' }],             title: 'Vessel',           medium: '', year: '2025', dimensions: '', blurb: 'Turned, carved, burnt and waxed.', price: 'POA' },
+  { slug: 'barriers-in-beech',           images: [{ src: vessel19, alt: 'Barriers In Beech' }, { src: vessel19b, alt: 'Barriers In Beech' }],             title: 'Barriers In Beech',           medium: 'Beech felled in Chiswick, London', year: '2025', dimensions: '', blurb: 'Turned, carved, burnt and waxed.', price: 'SOLD' },
 ];
