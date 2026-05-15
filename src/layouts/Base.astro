@@ -1,5 +1,6 @@
 ---
 import Analytics from '@vercel/analytics/astro';
+import { SpeedInsights } from '@vercel/speed-insights/astro';
 interface Props {
   title?: string;
   fullBleed?: boolean;
@@ -28,6 +29,7 @@ const isActive = (path: string) => {
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
     <title>{title}</title>
     <Analytics />
+    <SpeedInsights />
   </head>
   <body>
 
