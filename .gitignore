@@ -20,3 +20,9 @@ pnpm-debug.log*
 # macOS
 .DS_Store
 .vercel
+
+# Oversized videos (>100MB, cannot push to GitHub)
+public/images/Barriers in Maple.MOV
+public/images/IMG_6229.mov
+public/images/IMG_6242.mov
+public/images/IMG_6689.mov

@@ -47,6 +47,7 @@ const isActive = (path: string) => {
         <nav class="top-nav">
           <a href="/" class={isActive('/') ? 'active' : ''}>Paintings</a>
           <a href="/vessels" class={isActive('/vessels') ? 'active' : ''}>Vessels</a>
+          <a href="/videos" class={isActive('/videos') ? 'active' : ''}>Videos</a>
           <a href="/about" class={isActive('/about') ? 'active' : ''}>About</a>
         </nav>
 
@@ -56,6 +57,7 @@ const isActive = (path: string) => {
           <div class="mobile-dropdown" id="mobileDropdown">
             <a href="/" class={isActive('/') ? 'active' : ''}>Paintings</a>
             <a href="/vessels" class={isActive('/vessels') ? 'active' : ''}>Vessels</a>
+            <a href="/videos" class={isActive('/videos') ? 'active' : ''}>Videos</a>
             <a href="/about" class={isActive('/about') ? 'active' : ''}>About</a>
           </div>
         </div>

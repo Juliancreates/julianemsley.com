@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import { videos } from '../data/videos';
+---
+
+<Base title="Videos | Julian Emsley" fullBleed={true}>
+  <div class="gallery">
+    {videos.map((video) => (
+      <div id={video.slug} class="video-item" style={`--aspect: ${video.aspect};`}>
+        <div class="video-wrap">
+          <video src={video.src} autoplay muted loop playsinline />
+        </div>
+      </div>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .gallery {
+    display: flex;
+    gap: 6rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 100svh;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    align-items: center;
+  }
+  .gallery::-webkit-scrollbar { display: none; }
+
+  .video-item {
+    flex: none;
+    width: calc(100% * var(--aspect));
+  }
+
+  .video-wrap {
+    height: 100%;
+  }
+
+  video {
+    height: 100%;
+    width: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  @media (max-width: 750px) {
+    .gallery {
+      padding: 0.75rem 1rem;
+    }
+    .video-item {
+      height: 70svh;
+      width: calc(70svh * var(--aspect));
+    }
+  }
+
+  @media (min-width: 751px) {
+    .gallery {
+      padding: calc(8rem - 10px) 2rem 5.5rem;
+    }
+    .video-item {
+      height: calc(100vh - 15.5rem - 50px);
+      width: calc((100vh - 15.5rem - 50px) * var(--aspect));
+    }
+  }
+</style>
