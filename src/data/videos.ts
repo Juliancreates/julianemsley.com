@@ -13,6 +13,5 @@ export const videos: VideoEntry[] = [
   { slug: 'img-6689', src: '/images/IMG_6689_compressed.mov', title: '', year: '', aspect: 9 / 16 },
   { slug: 'smoke-series', src: '/images/smoke-series-triptych.mov', title: '', year: '', aspect: 9 / 16 },
   { slug: 'smoke-on-the-hills-ii', src: '/images/char-and-field.mov', title: '', year: '', aspect: 9 / 16 },
-  { slug: 'fire-in-the-hills', src: '/images/grain-burning.mov', title: '', year: '', aspect: 9 / 16 },
   { slug: 'low-smoke', src: '/images/low-smoke.mov', title: '', year: '', aspect: 9 / 16 },
 ];
