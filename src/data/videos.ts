@@ -8,8 +8,8 @@ export interface VideoEntry {
 
 export const videos: VideoEntry[] = [
   { slug: 'barriers-in-maple', src: '/images/barriers-in-maple-compressed.mov', title: '', year: '', aspect: 9 / 16 },
-  { slug: 'img-6229', src: '/images/IMG_6229_compressed.mov', title: '', year: '', aspect: 9 / 16 },
   { slug: 'img-6242', src: '/images/IMG_6242_compressed.mov', title: '', year: '', aspect: 9 / 16 },
+  { slug: 'img-6229', src: '/images/IMG_6229_compressed.mov', title: '', year: '', aspect: 9 / 16 },
   { slug: 'img-6689', src: '/images/IMG_6689_compressed.mov', title: '', year: '', aspect: 9 / 16 },
   { slug: 'smoke-series', src: '/images/smoke-series-triptych.mov', title: '', year: '', aspect: 9 / 16 },
   { slug: 'smoke-on-the-hills-ii', src: '/images/char-and-field.mov', title: '', year: '', aspect: 9 / 16 },
