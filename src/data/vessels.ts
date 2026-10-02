@@ -43,7 +43,7 @@ import cherryRaku2 from '../assets/images/vessels/cherry-raku-2.jpg';
 import blackLocustRaku from '../assets/images/vessels/black-locust-raku.jpg';
 
 export const vessels: Piece[] = [
-  { slug: 'burnt-black-locust', images: [{ src: burntBlackLocust1, alt: 'Burnt Black Locust' }, { src: burntBlackLocust2, alt: 'Burnt Black Locust' }, { src: burntBlackLocust3, alt: 'Burnt Black Locust' }], title: 'Burnt Black Locust', medium: 'Black locust wood', year: '2026', dimensions: '', blurb: 'Turned, carved, burnt and waxed.', price: '£450' },
+  { slug: 'burnt-black-locust', images: [{ src: burntBlackLocust3, alt: 'Burnt Black Locust' }, { src: burntBlackLocust1, alt: 'Burnt Black Locust' }, { src: burntBlackLocust2, alt: 'Burnt Black Locust' }], title: 'Burnt Black Locust', medium: 'Black locust wood', year: '2026', dimensions: '', blurb: 'Turned, carved, burnt and waxed.', price: '£450' },
   { slug: 'cherry-raku', images: [{ src: cherryRaku1, alt: 'Cherry Raku' }, { src: cherryRaku2, alt: 'Cherry Raku' }], title: 'Cherry Raku', medium: 'Cherry wood', year: '2026', dimensions: '', blurb: 'Turned, carved, burnt and waxed.', price: '£250' },
   { slug: 'black-locust-raku', images: [{ src: blackLocustRaku, alt: 'Black Locust Raku' }], title: 'Black Locust Raku', medium: 'Black locust wood', year: '2026', dimensions: '', blurb: 'Turned, carved, burnt and waxed.', price: '£300' },
   { slug: 'black-locust',   images: [{ src: vessel1, alt: 'Black Locust' }, { src: vessel1b, alt: 'Black Locust' }],   title: 'Black Locust',   medium: 'Black Locust felled in Southfields, London SW18',         year: '2026', dimensions: '37 × 22 cm', blurb: 'Turned, carved, burnt and waxed.', price: '£750' },
