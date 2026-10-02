@@ -57,7 +57,7 @@ const { pieces, section } = Astro.props;
   figure {
     flex: none;
     /* Width = (gallery height - vertical padding - caption area) × aspect ratio */
-    width: calc((100svh - 1.5rem - 4.5rem) * var(--aspect));
+    width: calc((100svh - 1.5rem - 5.5rem) * var(--aspect));
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -65,7 +65,7 @@ const { pieces, section } = Astro.props;
 
   .gallery-link {
     display: block;
-    height: calc(100svh - 1.5rem - 4.5rem);
+    height: calc(100svh - 1.5rem - 5.5rem);
     position: relative;
   }
 
@@ -136,10 +136,10 @@ const { pieces, section } = Astro.props;
       margin: auto 0;
     }
     figure {
-      width: calc((70svh - 6rem) * var(--aspect));
+      width: calc((70svh - 7rem) * var(--aspect));
     }
     .gallery-link {
-      height: calc(70svh - 6rem);
+      height: calc(70svh - 7rem);
     }
   }
 
