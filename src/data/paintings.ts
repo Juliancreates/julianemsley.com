@@ -49,8 +49,14 @@ import grainBurning3 from '../assets/images/paintings/grain-burning-3.jpg';
 import theLastFieldNew from '../assets/images/paintings/the-last-field-new.jpg';
 import charcoalDiptych2 from '../assets/images/paintings/charcoal-diptych-2.jpg';
 import charcoalDiptych3 from '../assets/images/paintings/charcoal-diptych-3.jpg';
+import smokeInWhite from '../assets/images/paintings/smoke-in-white.jpg';
+import smokeInPeach from '../assets/images/paintings/smoke-in-peach.jpg';
+import smokeInPlaster from '../assets/images/paintings/smoke-in-plaster.jpg';
 
 export const paintings: Piece[] = [
+  { slug: 'smoke-in-white',           images: [{ src: smokeInWhite, alt: 'Smoke in white' }],         title: 'Smoke In White',            medium: 'Charcoal, paint, resin',  year: '2026', dimensions: '126 × 66 cm framed', price: '£900' },
+  { slug: 'smoke-in-peach',           images: [{ src: smokeInPeach, alt: 'Smoke in peach' }],         title: 'Smoke In Peach',            medium: 'Charcoal, pastel, paint, resin',  year: '2026', dimensions: '126 × 66 cm framed', price: '£950' },
+  { slug: 'smoke-in-plaster',         images: [{ src: smokeInPlaster, alt: 'Smoke in plaster' }],     title: 'Smoke In Plaster',          medium: 'Charcoal, pastel, paint, resin',  year: '2026', dimensions: '126 × 66 cm framed', price: '£900' },
   { slug: 'smoke-series',             images: [{ src: slowFire4, alt: 'Slow fire' }],               video: '/images/smoke-series-triptych.mov', title: 'Smoke Series',              medium: 'Paint, charcoal, resin on wood panel',       year: '2025', dimensions: '105 × 55 cm framed x 3',  price: 'SOLD' },
   { slug: 'smoke-on-the-hills-ii',        images: [{ src: painting1,  alt: 'Char and field' }, { src: charAndField2, alt: 'Char and field' }, { src: charAndField3, alt: 'Char and field' }],          video: '/images/char-and-field.mov', title: 'Smoke On The Hills II',         medium: 'Paint, charcoal, pastel, chalk, ink on carved wood panel',               year: '2025', dimensions: '100 × 70 cm',  price: 'SOLD' },
   { slug: 'smoke-on-the-hills-i',         images: [{ src: painting8, alt: 'Tide and char' }, { src: smokeOnTheHillsI5, alt: 'Tide and char' }, { src: smokeOnTheHillsI6, alt: 'Tide and char' }],           title: 'Smoke On The Hills I',          medium: 'Paint, ink, charcoal, pastel, chalk on carved wood panel',           year: '2025', dimensions: '107 × 98 cm', price: 'SOLD' },
