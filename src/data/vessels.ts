@@ -24,7 +24,7 @@ import vessel13 from '../assets/images/vessels/vessel 13.jpg';
 import vessel13b from '../assets/images/vessels/vessel 13-2.jpg';
 import vessel14 from '../assets/images/vessels/vessel 14.jpg';
 import vessel14b from '../assets/images/vessels/vessel 14-2.jpg';
-import vessel14c from '../assets/images/vessels/vessel 14c.jpg';
+import vessel14c from '../assets/images/vessels/vessel 14-3.jpg';
 import vessel15 from '../assets/images/vessels/vessel 15.jpg';
 import vessel15b from '../assets/images/vessels/vessel 15-2.jpg';
 import vessel17 from '../assets/images/vessels/vessel 17.jpg';
