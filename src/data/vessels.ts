@@ -25,8 +25,6 @@ import vessel13b from '../assets/images/vessels/vessel 13-2.jpg';
 import vessel14 from '../assets/images/vessels/vessel 14.jpg';
 import vessel14b from '../assets/images/vessels/vessel 14-2.jpg';
 import vessel14c from '../assets/images/vessels/vessel 14-3.jpg';
-import vessel15 from '../assets/images/vessels/vessel 15.jpg';
-import vessel15b from '../assets/images/vessels/vessel 15-2.jpg';
 import vessel17 from '../assets/images/vessels/vessel 17.jpg';
 import vessel18 from '../assets/images/vessels/vessel 18.jpg';
 import vessel18b from '../assets/images/vessels/vessel 18-2.jpg';
@@ -55,7 +53,6 @@ export const vessels: Piece[] = [
   { slug: 'black-locust',   images: [{ src: vessel1, alt: 'Black Locust' }, { src: vessel1b, alt: 'Black Locust' }],   title: 'Black Locust',   medium: 'Black Locust felled in Southfields, London SW18',         year: '2026', dimensions: '37 × 22 cm', blurb: 'Turned, carved, burnt and waxed.', price: '£750' },
   { slug: 'barriers-in-black-locust',         images: [{ src: vessel3, alt: 'Barriers In Black Locust' }, { src: vessel3b, alt: 'Barriers In Black Locust' }],       title: 'Barriers In Black Locust',       medium: 'Black Locust felled in Southfields, London SW18',   year: '2026', dimensions: '32 × 20 cm', blurb: 'Turned, carved, burnt and waxed.', price: '£900' },
   { slug: 'barriers-in-black-locust-3',         images: [{ src: vessel14, alt: 'Barriers In Black Locust' }, { src: vessel14b, alt: 'Barriers In Black Locust' }, { src: vessel14c, alt: 'Barriers In Black Locust' }],          title: 'Barriers In Black Locust',        medium: 'Black Locust felled in Southfields, London SW18', year: '2025', dimensions: '36 × 28 cm', blurb: 'Turned, carved, burnt and waxed.', price: '£700' },
-  { slug: 'barriers-in-locust',         images: [{ src: vessel15b, alt: 'Barriers In Black Locust' }, { src: vessel15, alt: 'Barriers In Black Locust' }],          title: 'Barriers in Black Locust',        medium: 'Black Locust felled in Southfields, London SW18', year: '2025', dimensions: '37 × 26 cm', blurb: 'Turned, carved, burnt and waxed.', price: '£600' },
   { slug: 'barriers-in-black-locust-2',          images: [{ src: vessel5,  alt: 'Barriers In Black Locust' }],         title: 'Barriers In Black Locust',        medium: 'Black Locust felled in Southfields, London SW18', year: '2026', dimensions: '25 × 24 cm', blurb: 'Turned, carved, burnt and waxed.', price: '£500' },
   { slug: 'barriers-in-maple-2', images: [{ src: vessel8, alt: 'Barriers in Maple' }, { src: vessel8b, alt: 'Barriers in Maple' }], title: 'Barriers in Maple', medium: 'Norwegian Maple Felled in Teddington, London', year: '2025', dimensions: '27 × 24 cm', blurb: 'Turned, carved, burnt and waxed.', price: '£400' },
   { slug: 'barriers-in-maple',           images: [{ src: vessel13b, alt: 'Barriers In Maple' }, { src: vessel13, alt: 'Barriers In Maple' }],          title: 'Barriers In Maple',        medium: 'Norwegian Maple felled in Teddington, London', year: '2025', dimensions: '50 × 40 cm', blurb: 'Turned, carved, burnt and waxed.', price: '£1000' },
